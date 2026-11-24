@@ -344,3 +344,39 @@ footer{border-top:5px solid var(--orange);background:var(--cocoa)}
 @media(max-width:1180px){.topbar nav{border:2px solid var(--cocoa);border-radius:5px;background:#fff8e7}.topbar nav a{font-size:.88rem;padding:.5rem}.topbar nav a:nth-last-child(1){margin-left:0}}
 @media(max-width:760px){.hero h1{font-size:2.05rem}.page-head h1{font-size:1.9rem}.brief-heading h2{font-size:1.55rem}.section-title h2{font-size:1.35rem}.timeline-item{grid-template-columns:1fr}.timeline-item:before{top:.75rem}.today-alert h3{font-size:.9rem}.card h3{font-size:.94rem}}
 @media(max-width:440px){.brand{font-size:.88rem}.hero h1{font-size:1.95rem}.hero-copy>p:not(.eyebrow){font-size:.9rem}.page-head{min-height:175px}.page-head h1{font-size:1.75rem}.lesson-card{grid-template-columns:48px 1fr}.lesson-card .check{grid-column:2}.nav-icon{width:18px;height:18px}}
+
+/* Dark cocoa canvas — bright paper panels and high-contrast pixel headlines */
+body{
+  background:#4b241f;
+  background-image:none;
+  color:#fff8e7;
+}
+main{color:#fff8e7}
+.hero h1,.page-head h1{
+  font-family:"Pixelify Sans",monospace;
+  font-weight:700;
+  letter-spacing:-.02em;
+  color:#fff0a8;
+  text-shadow:3px 3px 0 #6b342a;
+}
+.hero h1{font-size:clamp(2.15rem,4.1vw,3.35rem);line-height:.94}
+.hero-copy .eyebrow,.page-head .eyebrow{color:#fff0a8}
+.hero-copy>p:not(.eyebrow),.page-head p{color:#fffdf5}
+.section-title h2,.daily-plan>.section-title h2,.course-progress h2{
+  color:#fff0a8;
+  text-shadow:2px 2px 0 #6b342a;
+}
+.section-title p,.daily-plan>.section-title p{color:#f7dfd0}
+.winter-card,.today-summary-panel,.day-timeline,.card,.lesson-card,.lesson-body,.lesson-side,
+.villager,.reference-card,.calc-card,.calendar-panel,.world-map-card,.farm-editor,.crop-calc,
+.farm-photo-display,.map-photo-card,.building-card,.animal-card,.weapon-card,.skill-card,
+.crop-table,.crop-sale-guide,.directory-tools,.recipe-tools,.course-progress{
+  color:var(--ink);
+}
+.today-summary-panel,.day-timeline,.winter-card,.card,.lesson-card,.reference-card,.calc-card,
+.calendar-panel,.world-map-card,.farm-editor,.crop-calc,.map-photo-card,.building-card,.animal-card,
+.weapon-card,.skill-card,.course-progress{background-color:#fffaf0}
+.today-summary-panel{background:#eaf5fb}
+.topbar{background:#fffaf0}
+footer{background:#351815}
+@media(max-width:760px){.hero h1{font-size:2rem;text-shadow:2px 2px 0 #6b342a}}
