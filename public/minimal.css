@@ -570,3 +570,68 @@ footer{background:var(--cocoa-dark)!important;border-top:5px solid var(--orange)
 @media(max-width:900px){.hero>.baseline-card{min-height:0}.lesson-layout{grid-template-columns:1fr}.lesson-side{position:static}.hero-copy{min-height:360px}}
 @media(max-width:720px){.season-lesson-grid{grid-template-columns:1fr}.season-lesson-grid img{height:210px}.sprite-teaching-grid,.machine-grid{grid-template-columns:repeat(2,1fr)}.smelting-visual>div,.sprinkler-recipe{flex-wrap:wrap}.hero-copy{min-height:330px}.hero>.baseline-card{height:auto}}
 @media(max-width:440px){.sprite-teaching-grid,.machine-grid{grid-template-columns:1fr 1fr}.sprite-tile{min-height:110px;padding:.55rem}.sprinkler-layout{grid-template-columns:repeat(3,60px)}.sprinkler-layout span{width:60px;height:60px}.skill-heart-row strong{font-size:.82rem;letter-spacing:.03em}.hero-copy{min-height:310px}}
+
+/* Lesson readability and spacing pass */
+main{padding-top:1.5rem;padding-bottom:3rem}
+.page-head{margin-bottom:1.4rem}.section{margin-top:1.6rem}.reference-grid,.card-grid{gap:.8rem}
+.source-note{display:block;margin:.8rem 0 0!important;padding:.25rem 0;color:#f2d7c7!important;line-height:1.45}
+.recipe-grid+.notice{margin-top:1rem}.notice{margin-block:.8rem}
+.easy-food-intro{margin-bottom:1rem;padding:1rem!important}.easy-food-intro h2{font-size:1.45rem!important}
+.crop-calculator{margin-bottom:1rem!important;padding:1.1rem!important}.crop-calc-form{gap:.6rem!important}
+.crop-calc-form .field input,.crop-calc-form .field select,.recipe-tools input,.recipe-tools select{
+  min-height:42px!important;padding:.5rem .7rem!important;font-size:.92rem!important
+}
+.crop-calc-form .button{min-height:42px!important;padding:.55rem .8rem!important}
+
+.lesson-body{padding:clamp(1rem,2.5vw,2rem)!important}
+.lesson-checkpoint{margin-bottom:.8rem;padding:.8rem}
+.lesson-media-grid{gap:.65rem;margin:1rem 0 1.25rem}.lesson-media-grid img{height:120px!important}
+.lesson-media-grid img.pixel-lesson-image{padding:.8rem!important;object-fit:contain!important;image-rendering:pixelated}
+.lesson-media-grid figcaption{padding:.55rem .65rem;font-size:.78rem}
+.lesson-body .deep-section{
+  display:grid!important;grid-template-columns:220px minmax(0,1fr)!important;
+  gap:0 1rem!important;padding:1.4rem 0!important
+}
+.lesson-body .deep-section>h2{grid-column:1/-1!important;margin:0 0 .8rem!important;font-size:1.35rem!important}
+.lesson-body .deep-section>.chapter-visual{grid-column:1!important;margin:0!important;align-self:start}
+.lesson-body .deep-section>.deep-copy{grid-column:2!important}
+.chapter-visual img{height:150px!important;object-fit:cover!important}
+.chapter-visual.is-sprite img{height:150px!important;object-fit:contain!important;padding:1.2rem;background:#fff8e7;image-rendering:pixelated}
+.lesson-hero-figure,.season-lesson-grid,.sprite-teaching-grid,.smelting-visual,.sprinkler-lesson{grid-column:1/-1!important}
+.lesson-hero-figure img{width:100%;height:auto!important;max-height:350px;object-fit:contain!important;background:#fff5df}
+.season-lesson-grid{gap:.7rem}.season-lesson-grid img{height:165px!important}.season-lesson-grid figcaption{padding:.55rem .65rem}
+.sprite-teaching-grid{gap:.5rem}.sprite-tile{min-height:105px;padding:.55rem}.sprite-tile img{width:50px;height:50px}
+.smelting-visual,.sprinkler-lesson{padding:.8rem}.smelting-visual .sprite-tile,.sprinkler-recipe .sprite-tile{min-width:105px}
+
+.lesson-start-here{margin:1rem 0 1.2rem;padding:1rem;border:2px solid var(--cocoa);border-left:8px solid var(--sky);border-radius:5px;background:#eef7fb;color:var(--ink)}
+.lesson-start-here h2{margin:.1rem 0 .45rem!important;color:var(--cocoa)!important}.lesson-reassurance{margin:.2rem 0 1rem!important;font-size:1rem!important;line-height:1.65!important;color:#514742!important}
+.beginner-guide-grid{display:grid;grid-template-columns:1fr 1fr;gap:.75rem}.beginner-guide-grid>div{padding:.85rem;border:1px solid #d6b39d;border-radius:4px;background:#fffaf0}
+.beginner-guide-grid .can-wait{grid-column:1/-1;background:#fff1f3;border-left:6px solid var(--pink)}
+.beginner-guide-grid h3{margin:0 0 .45rem;font-family:"Pixelify Sans",monospace;font-size:.92rem;color:var(--cocoa)}
+.beginner-guide-grid ul,.beginner-guide-grid ol{margin:.25rem 0;padding-left:1.25rem}.beginner-guide-grid li{margin:.3rem 0;color:#514742}
+.can-wait ul{display:flex;flex-wrap:wrap;gap:.4rem;list-style:none;padding:0}.can-wait li{margin:0;padding:.3rem .5rem;border-radius:999px;background:#fff;color:#8f3a58;font-size:.84rem}
+.lesson-slow-notes{margin:1rem 0 1.2rem;padding:1rem;border:2px solid var(--cocoa);border-left:8px solid var(--mustard);border-radius:5px;background:#fff1b8;color:var(--ink)}
+.lesson-slow-notes>h2{margin:.1rem 0 .35rem!important;color:var(--cocoa)!important}.lesson-slow-notes>p:not(.eyebrow){margin:.25rem 0 .85rem!important;color:#514742!important}
+.lesson-slow-notes>div{display:grid;grid-template-columns:1fr 1fr;gap:.7rem}.lesson-slow-notes article{padding:.8rem;border:1px solid #d4aa78;border-radius:4px;background:#fffaf0}
+.lesson-slow-notes h3{margin:0 0 .4rem;font-family:"Pixelify Sans",monospace;font-size:.9rem;color:var(--cocoa)}.lesson-slow-notes ul{margin:.2rem 0;padding-left:1.15rem}.lesson-slow-notes li{margin:.3rem 0;color:#514742;font-size:.9rem;line-height:1.5}
+.lesson-help-grid{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;margin:1.2rem 0}.lesson-help-grid article{padding:1rem;border:2px solid var(--cocoa);border-radius:5px;background:#fffaf0;color:var(--ink)}
+.lesson-help-grid article:nth-child(2){background:#fff1b8}.lesson-help-grid h2{margin:.1rem 0 .7rem!important;font-size:1.15rem!important}
+.lesson-help-grid dl{display:grid;gap:.5rem;margin:0}.lesson-help-grid dl div{padding:.55rem .65rem;border:1px solid #dec4b1;border-radius:4px;background:#fff}
+.lesson-help-grid dt{font-family:"Pixelify Sans",monospace;font-size:.82rem;color:var(--cocoa)}.lesson-help-grid dd{margin:.15rem 0 0;color:#514742;font-size:.88rem;line-height:1.45}
+
+@media(max-width:760px){
+  main{padding-top:1rem;padding-bottom:2rem}.lesson-body{padding:1rem!important}
+  .lesson-body .deep-section{grid-template-columns:118px minmax(0,1fr)!important;gap:0 .75rem!important;padding:1.15rem 0!important}
+  .chapter-visual img,.chapter-visual.is-sprite img{height:105px!important}.chapter-visual.is-sprite img{padding:.7rem}
+  .lesson-media-grid{grid-template-columns:repeat(3,1fr)!important}.lesson-media-grid img{height:82px!important}.lesson-media-grid figcaption{font-size:.7rem}
+  .season-lesson-grid{grid-template-columns:1fr 1fr}.season-lesson-grid img{height:120px!important}
+  .beginner-guide-grid,.lesson-help-grid,.lesson-slow-notes>div{grid-template-columns:1fr}.beginner-guide-grid .can-wait{grid-column:auto}
+  .crop-calculator{padding:.85rem!important}
+}
+@media(max-width:520px){
+  .lesson-body .deep-section{grid-template-columns:1fr!important}.lesson-body .deep-section>.chapter-visual,.lesson-body .deep-section>.deep-copy{grid-column:1!important}
+  .chapter-visual{width:100%;max-width:260px;margin:0 auto .8rem!important}.chapter-visual img,.chapter-visual.is-sprite img{height:125px!important}
+  .lesson-media-grid{grid-template-columns:1fr 1fr!important}.lesson-media-grid figure:last-child{grid-column:1/-1}.lesson-media-grid figure:last-child img{height:100px!important}
+  .season-lesson-grid{grid-template-columns:1fr}.season-lesson-grid img{height:135px!important}
+  .sprite-teaching-grid,.machine-grid{grid-template-columns:repeat(3,1fr)}.sprite-tile{min-height:85px}.sprite-tile img{width:40px;height:40px}.sprite-tile figcaption{font-size:.65rem}
+}

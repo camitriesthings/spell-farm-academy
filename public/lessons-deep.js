@@ -106,7 +106,7 @@ const lessonDeepDives={
 
 const lessonQuizExtras={
 1:[{q:'Which ordinary action uses no energy?',opts:['Walking','Using the Axe','Watering crops'],a:0},{q:'When does the game save your day?',opts:['When you sleep','Every in-game hour','Whenever you open a menu'],a:0}],
-2:[{q:'How many gifts can most villagers receive in one week?',opts:['One','Two','Unlimited'],a:1},{q:'What is the easiest friendship habit?',opts:['Talk when you naturally meet','Memorize every schedule','Gift everyone daily'],a:0}],
+2:[{q:'How many gifts can most villagers receive in one week?',opts:['One','Two','Unlimited'],a:1},{q:'What can change a villager’s usual schedule?',opts:['Weather and season','Your tool color','Crop quality'],a:0}],
 3:[{q:'What should surround a future building footprint?',opts:['A walking border','Only crops','A pond'],a:0},{q:'Can most farm buildings be moved later?',opts:['No','Yes, through Robin','Only in Winter'],a:1}],
 4:[{q:'How much hay does one animal eat indoors per day?',opts:['One','Two','Five'],a:0},{q:'What does a heater replace?',opts:['Hay','Petting','Neither'],a:2}],
 5:[{q:'Who upgrades farm tools?',opts:['Robin','Clint','Willy'],a:1},{q:'What does one ordinary metal bar require?',opts:['5 ore + 1 Coal','10 ore only','1 ore + 5 Coal'],a:0}],
@@ -117,6 +117,105 @@ const lessonQuizExtras={
 10:[{q:'Which purchase is often most valuable?',opts:['The one that removes a chore you dislike','The most expensive one','Every seed in the shop'],a:0},{q:'Why keep a gold reserve?',opts:['For seeds, hay, and surprises','Gold expires','It raises friendship'],a:0}],
 11:[{q:'What should you check before a festival outing?',opts:['Entry time and location','Only the weather','Only your inventory color'],a:0},{q:'Do all festivals pause the day in the same way?',opts:['Yes','No','Only in Winter'],a:1}],
 12:[{q:'What should guide your layout first?',opts:['Your morning route','Perfect symmetry','A copied end-game farm'],a:0},{q:'What is a good way to test a footprint?',opts:['Temporary paths','Plant trees everywhere','Buy the building first'],a:0}]
+};
+
+const lessonBeginnerSupport={
+1:{
+  calm:'You do not need to understand the whole Valley today. Learn the clock, protect your energy, and choose one outing. Everything else can wait.',
+  remember:['A day starts at 6:00am and ends at 2:00am.','Walking and talking use no energy; most tool actions do.','Every season has 28 days.','The game saves after you sleep.'],
+  steps:['Wake up and check the TV.','Do animals and crops before leaving.','Choose one outing—not five.','Return, empty your bag, and sleep.'],
+  wait:['Perfect daily routes','Using every minute','Knowing every shop schedule'],
+  words:[['Energy','The green bar used by tools and fishing.'],['Health','Damage you can take in dangerous areas.'],['Luck','A daily influence, not a command.'],['Buff','A temporary bonus from food or drink.']],
+  fixes:[['I ran out of energy','Eat food, switch to walking or talking tasks, or go to bed.'],['I passed out','The day is not ruined. Recover and plan an earlier return next time.'],['I missed something','Seasons and events return. Stardew is built for second chances.']]
+},
+2:{
+  calm:'Friendship is not a checklist. Start with the people you naturally meet and let favorites appear on their own.',
+  remember:['Talking is useful even without a gift.','Most villagers accept two gifts per week.','Birthday gifts are especially powerful.','Schedules change with weather, season, and story progress.'],
+  steps:['Pick two villagers you already like.','Check the birthday calendar once each morning.','Carry one safe liked gift only when convenient.','Talk when your routes cross.'],
+  wait:['Memorizing every loved gift','Tracking every villager daily','Romance decisions'],
+  words:[['Heart','A visible measure of friendship.'],['Loved gift','A favorite item with a large friendship gain.'],['Liked gift','A good gift that is easier to find.'],['Schedule','Where a villager goes at different times.']],
+  fixes:[['I cannot find someone','Try their home, the Saloon in the evening, or another day.'],['I gave the wrong gift','One mistake will not ruin the friendship.'],['A bedroom is locked','Some private rooms need more friendship first.']]
+},
+3:{
+  calm:'Your farm does not need a final layout in Year 1. Build short, comfortable walking routes and leave room to change your mind.',
+  remember:['Keep daily chores close together.','Leave walking lanes through crops.','A Quality Sprinkler fits the center of a 3×3 block.','Most buildings can be moved later.'],
+  steps:['Watch the route you walk every morning.','Place one chest beside the job it supports.','Mark future building space with paths.','Keep one open area for discoveries.'],
+  wait:['Perfect symmetry','Permanent fences everywhere','An end-game decoration plan'],
+  words:[['Footprint','The tiles a building occupies.'],['Pasture','Outdoor grass space for animals.'],['Trellis','A crop support you cannot walk through.'],['Module','A small repeatable layout block.']],
+  fixes:[['My route feels slow','Move the chest or machine you visit most.'],['I planted myself in','Remove a crop or add a side lane; the field does not need to be perfect.'],['A building is in the way','Ask Robin to move it when her shop is available.']]
+},
+4:{
+  calm:'Animal care is a short morning loop: pet, feed, collect. You do not need every animal or machine at once.',
+  remember:['Each indoor animal eats one hay per day.','A standard silo stores 240 hay.','A heater supports Winter mood but does not replace food.','Products can be processed into artisan goods.'],
+  steps:['Pet every animal you own.','Check the feeding bench.','Collect eggs, milk, or other products.','Load only the machines you already have.'],
+  wait:['Buying every animal','Automating the whole barn','Maximizing product quality immediately'],
+  words:[['Mood','How comfortable an animal feels today.'],['Friendship','Long-term bond built by care.'],['Auto-feeder','A Deluxe-building feature that fills the bench.'],['Artisan good','A processed item such as mayonnaise or cheese.']],
+  fixes:[['An animal did not produce','Check food, mood, age, and whether that animal produces daily.'],['The bench is empty','Take hay from the hopper or buy hay from Marnie.'],['I cannot buy an animal','Confirm the correct building and an empty space are ready.']]
+},
+5:{
+  calm:'Tools solve specific jobs. Machines repeat simple recipes. Learn only the next upgrade or machine that helps your current routine.',
+  remember:['Clint upgrades farm tools; he does not upgrade weapons or fishing rods.','Tool tiers must be purchased in order.','Most metal bars use 5 ore and 1 Coal.','A Quality Sprinkler waters 8 surrounding tiles.'],
+  steps:['Choose one tool that currently causes friction.','Check that you have five matching bars and the gold cost.','Pick a two-day window when you can live without it.','Collect the finished tool on the second morning.'],
+  wait:['Iridium tools','Owning every machine','A fully automated farm'],
+  words:[['Ore','Raw metal-bearing rock from the Mines.'],['Bar','Smelted metal used for crafting and upgrades.'],['Refined Quartz','A crafted material used by Quality Sprinklers.'],['Processing time','How long a machine holds an input.']],
+  fixes:[['I gave Clint the wrong tool','Use the other tools and collect it when ready; the save is still fine.'],['I have ore but no bars','Craft or use a Furnace and keep Coal.'],['My sprinkler missed a crop','The sprinkler waters the eight tiles touching it, not its own center tile.']]
+},
+6:{
+  calm:'Fishing feels difficult because the control has momentum. Short practice sessions are the lesson; catching everything is not.',
+  remember:['Keep the fish inside the green bar.','Short taps are easier than one long hold.','Fish depend on place, season, time, and weather.','A Fishing food buff makes the catch bar larger.'],
+  steps:['Use the Training Rod for ten casts.','Choose one calm location.','Ignore treasure chests until the fish feels safe.','Keep one new catch and sell comfortable extras.'],
+  wait:['Perfect catches','Legendary fish','Memorizing the whole fish table'],
+  words:[['Bite','The moment a fish takes the hook.'],['Catch bar','The green area you control.'],['Bait','An attachment that reduces waiting time.'],['Tackle','An Iridium Rod attachment that changes fishing behavior.']],
+  fixes:[['The bar bounces off the bottom','Release before it lands, then tap gently.'],['Fish move too fast','Use the Training Rod or a food buff and choose easier fish.'],['Nothing I want is biting','Recheck location, season, weather, and time.']]
+},
+7:{
+  calm:'A successful mine trip is one elevator checkpoint or one useful bag of materials. You never need to clear the whole floor.',
+  remember:['The elevator saves every five floors.','Copper favors 1–39, Iron 40–79, Gold 80–119.','Weapons use no energy; damage reduces health.','Leaving safely is part of the plan.'],
+  steps:['Start from the nearest elevator floor.','Put Pickaxe, weapon, and food together on the toolbar.','Prioritize ladders and the material you came for.','Leave when health, time, or inventory feels uncomfortable.'],
+  wait:['Reaching floor 120 quickly','Defeating every monster','Breaking every rock'],
+  words:[['Checkpoint','A saved elevator floor.'],['Ladder','The route to the next mine floor.'],['Knockback','How far a weapon pushes an enemy.'],['Monster drop','An item left after a monster is defeated.']],
+  fixes:[['I keep taking damage','Fight in open space and keep enemies on one side.'],['I cannot find a ladder','Break rocks efficiently, defeat required enemies, or leave and try another day.'],['My bag is full','Throw away low-value clutter or leave with the useful haul.']]
+},
+8:{
+  calm:'Skill levels describe what you have practiced; they are not grades. Let low skills grow through small, pleasant sessions.',
+  remember:['Each skill has 10 permanent levels.','Levels reduce related energy costs and unlock recipes.','Levels 5 and 10 offer professions.','Food buffs are temporary and do not replace XP.'],
+  steps:['Look at your five current levels.','Choose one activity you already enjoy.','Notice the overnight level-up screen.','Read new recipes before planning materials.'],
+  wait:['The “perfect” profession','Equal levels in every skill','Grinding a skill you dislike'],
+  words:[['XP','Hidden experience earned by relevant actions.'],['Proficiency','Reduced energy cost for related tools.'],['Profession','A specialization selected at levels 5 and 10.'],['Recipe unlock','A new craft or food learned after sleeping.']],
+  fixes:[['I leveled but cannot see the recipe','Finish the day and check after the overnight screen.'],['A buff ended','That is normal; your permanent level remains.'],['One skill is low','Give it a short practice block when you feel curious.']]
+},
+9:{
+  calm:'Bundles are a tour of the game, not a deadline. Save one unfamiliar seasonal item and learn the rooms slowly.',
+  remember:['Bundles ask for specific items or a subset of shown options.','Donated items cannot be removed.','Seasonal items return next year.','You do not need to finish in Year 1.'],
+  steps:['Make one chest labeled Keepers.','Save one new crop, fish, forage item, and mineral.','Open one nearby bundle and read its empty slots.','Donate only what you are comfortable losing.'],
+  wait:['Completing every room quickly','Buying rare items to rush progress','Remembering every requirement'],
+  words:[['Bundle','A collection request in the Community Center.'],['Keeper','An item saved until its uses are checked.'],['Donation','An item permanently placed into a bundle.'],['Seasonal','Available only in certain parts of the year.']],
+  fixes:[['I sold something needed','It can return next season or through another source.'],['I donated the wrong quality','If the slot accepted it, the contribution still counts.'],['The list feels huge','Focus only on the current season and your normal activities.']]
+},
+10:{
+  calm:'Gold is a tool for making the farm more comfortable. Keep a reserve, choose one project, and ignore theoretical perfection.',
+  remember:['Current gold belongs in Update My Farm.','Seed cost is paid before harvest income arrives.','Processing can increase value but costs time and machines.','A purchase that removes a hated chore can be excellent.'],
+  steps:['Write the full cost of one project.','Reserve seed and hay money first.','Check whether the project needs bars, wood, or stone too.','Buy only when the remaining reserve feels safe.'],
+  wait:['Maximum profit spreadsheets','Buying every upgrade immediately','Comparing your farm to Year 5 screenshots'],
+  words:[['Base sell price','The value of a normal-quality item.'],['Regrowth','New harvests from the same plant.'],['Reserve','Gold intentionally kept unspent.'],['Return','What a purchase gives back in money, time, or comfort.']],
+  fixes:[['I spent too much','Use low-cost activities and sell normal products; the farm recovers.'],['A crop will not finish','Use the Crop Planner before buying the next batch.'],['I cannot choose a project','Choose the one that removes the most repeated annoyance.']]
+},
+11:{
+  calm:'The calendar is there so you can notice special days, not so you must attend everything or gift everyone.',
+  remember:['Birthdays and festivals are shown by season and day.','Festival invitations include an entry window and location.','Some events continue normal time while others change the day.','Missing an event is recoverable next year.'],
+  steps:['Check today on the Home dashboard.','Read the event time before leaving the farm.','Finish essential animal and crop care first.','Bring only items the invitation or event clearly needs.'],
+  wait:['Winning every contest','Buying every festival item','Planning a perfect gift for every birthday'],
+  words:[['Entry window','The time range when you can enter a festival.'],['Location','The map area where the event begins.'],['Festival shop','A temporary store available during an event.'],['Birthday multiplier','The stronger friendship effect of a birthday gift.']],
+  fixes:[['The event will not start','Check the correct day, location, and entry time.'],['I arrived too late','The festival returns next year.'],['I forgot a gift','Talk normally; friendship is not damaged by missing a birthday.']]
+},
+12:{
+  calm:'A dream farm is built in layers. Choose how you want mornings to feel, then improve one route or corner at a time.',
+  remember:['Function comes before decoration.','Temporary paths are excellent planning tools.','Sprinkler fields need access lanes.','Empty space is useful future space.'],
+  steps:['Choose three feelings for the farm.','Sketch the morning route from bed to the farm exit.','Mark one future footprint with paths.','Complete one small corner before starting another.'],
+  wait:['A final Year 2 blueprint','Filling every tile','Copying another player’s farm exactly'],
+  words:[['Zone','A loose area for one kind of work.'],['Route','The path you repeat through the farm.'],['Iteration','Improving a design after using it.'],['Flexible space','An open area saved for future ideas.']],
+  fixes:[['The design feels crowded','Remove decoration from the busiest route and reopen walking space.'],['I changed my mind','Move buildings and chests; redesign is normal.'],['The farm looks unfinished','Pick one small visible corner and finish only that.']]
+}
 };
 
 const spriteTile=(src,label)=>`<figure class="sprite-tile"><img src="${src}" alt="${label}" loading="lazy"><figcaption>${label}</figcaption></figure>`;
@@ -136,16 +235,20 @@ function lessonSpecialVisual(lessonId,index,title,fallback){
     ['assets/machines/mayonnaise-machine.png','Mayonnaise Machine'],['assets/machines/preserves-jar.png','Preserves Jar'],['assets/machines/cheese-press.png','Cheese Press'],['assets/machines/tapper.png','Tapper'],['assets/machines/recycling-machine.png','Recycling Machine'],['assets/machines/keg.png','Keg']
   ].map(x=>spriteTile(x[0],x[1])).join('')}</div>`;
   if(lessonId===5&&index===6)return `<div class="sprinkler-lesson"><div class="sprinkler-recipe">${spriteTile('assets/materials/iron-bar.png','1 Iron Bar')}<b>+</b>${spriteTile('assets/materials/gold-bar.png','1 Gold Bar')}<b>+</b>${spriteTile('assets/materials/refined-quartz.png','1 Refined Quartz')}</div><div class="sprinkler-layout" aria-label="Quality Sprinkler waters eight surrounding tiles">${Array.from({length:9},(_,i)=>i===4?`<span class="sprinkler-center"><img src="assets/tools/quality-sprinkler.png" alt="Quality Sprinkler"></span>`:'<span class="watered-tile">crop</span>').join('')}</div><p>Place the sprinkler in the center. The eight surrounding crop tiles are watered every morning.</p></div>`;
-  return `<figure class="chapter-visual"><img src="${fallback}" alt="${title} visual example" loading="lazy"><figcaption>${title} in practice</figcaption></figure>`;
+  const sprite=/\/(villagers|crops|recipes|weapons|tools|materials|machines|buildings|animals)\//.test(fallback);
+  return `<figure class="chapter-visual ${sprite?'is-sprite':''}"><img src="${fallback}" alt="${title} visual example" loading="lazy"><figcaption>${title} in practice</figcaption></figure>`;
 }
 
 window.enhancedLessonPage=function(id){
-  const l=lessons.find(x=>x.id===+id)||lessons[0],sections=lessonDeepDives[l.id]||l.parts,visuals=lessonVisuals[l.id]||[],extra=lessonExpansion[l.id],done=getProgress().includes(l.id),questions=[l.quiz,...lessonQuizExtras[l.id]];
+  const l=lessons.find(x=>x.id===+id)||lessons[0],sections=lessonDeepDives[l.id]||l.parts,visuals=lessonVisuals[l.id]||[],extra=lessonExpansion[l.id],support=lessonBeginnerSupport[l.id],coaching=lessonGuides[l.id]?.extras||[],done=getProgress().includes(l.id),questions=[l.quiz,...lessonQuizExtras[l.id]];
   main.innerHTML=`${header(l.title,l.dek,`Lesson ${String(l.id).padStart(2,'0')} of 12 · ${l.icon}`)}
   <section class="lesson-checkpoint"><img src="assets/brand/frieren-emblem.jpg" alt="Frieren"><div><p class="eyebrow">YOUR SPELL FARM CHECKPOINT</p><h2>${extra.checkpoint}</h2><p>The advice below is shaped around your reported farm, not a generic starter save.</p></div></section>
   <div class="lesson-layout"><article class="lesson-body"><p class="notice"><strong>Your gentle goal:</strong> Read one section or the whole chapter. Nothing here is a deadline.</p>
+  <section class="lesson-start-here"><p class="eyebrow">START HERE IF THIS FEELS LIKE A LOT</p><h2>The calm version first</h2><p class="lesson-reassurance">${support.calm}</p><div class="beginner-guide-grid"><div><h3>If you remember only four things</h3><ul>${support.remember.map(x=>`<li>${x}</li>`).join('')}</ul></div><div><h3>Your first try, step by step</h3><ol>${support.steps.map(x=>`<li>${x}</li>`).join('')}</ol></div><div class="can-wait"><h3>You can ignore this for now</h3><ul>${support.wait.map(x=>`<li>${x}</li>`).join('')}</ul></div></div></section>
   <div class="lesson-media-grid">${visuals.map(v=>`<figure><img class="${v[3]?'pixel-lesson-image':''}" src="${v[0]}" alt="${v[1]}" loading="lazy"><figcaption><strong>${v[1]}</strong><br>${v[2]}</figcaption></figure>`).join('')}</div>
+  <section class="lesson-slow-notes"><p class="eyebrow">LET’S SLOW THAT DOWN</p><h2>The details beginners usually need explained</h2><p>These are the little rules the game assumes you will discover by trial and error. You do not have to memorize them—come back whenever you need them.</p><div>${coaching.map((group,i)=>`<article><h3>${sections[i]?.[0]||`Beginner note ${i+1}`}</h3><ul>${group.map(item=>`<li>${item}</li>`).join('')}</ul></article>`).join('')}</div></section>
   ${sections.map((s,i)=>`<section class="deep-section" id="part${i+1}"><h2>${i+1}. ${s[0]}</h2>${lessonSpecialVisual(l.id,i,s[0],extra.images[i%extra.images.length])}<div class="deep-copy">${s[1]}</div></section>`).join('')}
+  <section class="lesson-help-grid"><article><p class="eyebrow">WORDS YOU WILL SEE</p><h2>New words, in plain language</h2><dl>${support.words.map(x=>`<div><dt>${x[0]}</dt><dd>${x[1]}</dd></div>`).join('')}</dl></article><article><p class="eyebrow">IF SOMETHING GOES WRONG</p><h2>Small fixes, no panic</h2><dl>${support.fixes.map(x=>`<div><dt>${x[0]}</dt><dd>${x[1]}</dd></div>`).join('')}</dl></article></section>
   <section class="lesson-reference" id="lessonReference"><p class="eyebrow">KEEP THIS HANDY</p><h2>At-a-glance reference</h2><div class="lesson-table-wrap"><table><thead><tr><th>Topic</th><th>What to remember</th><th>How it helps Spell Farm</th></tr></thead><tbody>${extra.reference.map(row=>`<tr>${row.map(cell=>`<td>${cell}</td>`).join('')}</tr>`).join('')}</tbody></table></div></section>
   <aside class="tip"><strong>Spell Farm note</strong><br>${l.tip}</aside>
   <section class="lesson-practice"><p class="eyebrow">YOUR PRACTICAL ASSIGNMENT</p><h2>Try three tiny experiments</h2><p>No deadline. Choose one now and keep the others for another day.</p><ol>${extra.practice.map(item=>`<li>${item}</li>`).join('')}</ol></section>
