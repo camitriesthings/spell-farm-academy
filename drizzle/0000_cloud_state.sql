@@ -1,1 +1,0 @@
-CREATE TABLE `user_state` (`user_id` text PRIMARY KEY NOT NULL, `farm_json` text DEFAULT '{}' NOT NULL, `progress_json` text DEFAULT '[]' NOT NULL, `photo_key` text, `updated_at` integer DEFAULT (unixepoch()) NOT NULL);
