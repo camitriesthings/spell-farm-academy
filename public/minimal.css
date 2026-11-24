@@ -380,3 +380,92 @@ main{color:#fff8e7}
 .topbar{background:#fffaf0}
 footer{background:#351815}
 @media(max-width:760px){.hero h1{font-size:2rem;text-shadow:2px 2px 0 #6b342a}}
+
+/* Warm paper cards — softer against the cocoa canvas */
+.card,.lesson-card,.reference-card,.hidden-card,.map-photo-card,.building-card,.animal-card,
+.weapon-card,.weapon-place,.skill-card,.calc-card,.crop-sale-guide,.lesson-body,.lesson-side,
+.villager,.farm-editor,.crop-calc,.calendar-panel,.world-map-card,.course-progress{
+  background:#f7ead8!important;
+  border-color:#b97465!important;
+}
+.card:nth-child(3n+2),.reference-card:nth-child(3n+2),.hidden-card:nth-child(3n+2),
+.building-card:nth-child(3n+2),.animal-card:nth-child(3n+2),.skill-card:nth-child(3n+2){background:#e8f2f6!important}
+.card:nth-child(3n),.reference-card:nth-child(3n),.hidden-card:nth-child(3n),
+.building-card:nth-child(3n),.animal-card:nth-child(3n),.skill-card:nth-child(3n){background:#f8e3e7!important}
+.card h2,.card h3,.lesson-card h2,.reference-card h2,.hidden-card h2,.map-photo-card h2,
+.building-card h2,.animal-card h2,.weapon-card h2,.weapon-place h2,.skill-card h2,
+.calc-card h2,.lesson-body h2,.villager h2,.crop-sale-guide h2{
+  color:var(--cocoa)!important;
+}
+.card p,.lesson-card p,.reference-card p,.hidden-card p,.map-photo-card p,.building-card p,
+.animal-card p,.weapon-card p,.weapon-place p,.skill-card p,.calc-card p,.lesson-body p,.villager p{
+  color:#514742;
+}
+
+/* Last-reported character progress card */
+.baseline-card{display:grid;gap:1rem}
+.baseline-profile{display:grid;grid-template-columns:92px minmax(0,1fr);gap:1rem;align-items:start}
+.baseline-character{display:grid;gap:.35rem;justify-items:center}
+.baseline-character img{width:86px;height:86px;object-fit:cover;border:2px solid var(--cocoa);border-radius:4px;image-rendering:auto}
+.baseline-character span{font-family:"Pixelify Sans",monospace;font-size:.82rem;color:var(--cocoa)}
+.baseline-summary{display:grid;gap:.55rem;min-width:0}
+.baseline-gold{display:grid;grid-template-columns:1fr auto;align-items:end;gap:.5rem;border-bottom:1px dashed #c9aa91;padding-bottom:.45rem}
+.baseline-gold span,.baseline-season span{font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;color:#7b6258}
+.baseline-gold strong{font-family:"Pixelify Sans",monospace;font-size:1.62rem;line-height:1;color:var(--cocoa)}
+.baseline-season{display:grid;grid-template-columns:1fr 1fr;gap:.5rem}
+.baseline-season>div{display:grid;gap:.1rem;padding:.45rem;background:#fff3cf;border:1px solid #d9b67a;border-radius:3px}
+.baseline-season b{font-family:"Pixelify Sans",monospace;font-size:.82rem;color:var(--cocoa)}
+.baseline-skills{display:grid;gap:.45rem;border-top:1px dashed #c9aa91;padding-top:.75rem}
+.skill-level-grid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:.35rem}
+.skill-level{display:grid;grid-template-columns:22px 1fr auto;align-items:center;gap:.25rem;padding:.42rem;border:1px solid #c8a98f;border-radius:3px;background:#fff5df}
+.skill-level img{width:20px;height:20px;object-fit:contain;image-rendering:pixelated}
+.skill-level span{font-family:"Pixelify Sans",monospace;font-size:.7rem;color:#6a5148}
+.skill-level strong{font-family:"Pixelify Sans",monospace;font-size:1rem;color:var(--cocoa)}
+.skill-level.farming{background:#eef1cf}.skill-level.mining{background:#e8f2f6}.skill-level.foraging{background:#f7ead8}.skill-level.fishing{background:#e4eef8}.skill-level.combat{background:#f8e3e7}
+.baseline-note{margin:0;color:#705f57}
+@media(max-width:560px){.baseline-profile{grid-template-columns:74px minmax(0,1fr)}.baseline-character img{width:68px;height:68px}.baseline-gold{grid-template-columns:1fr}.baseline-gold strong{font-size:1.45rem}.skill-level-grid{grid-template-columns:1fr 1fr}.skill-level:last-child{grid-column:1/-1}}
+
+/* Keep every farm field in one always-visible form */
+.more-farm-fields{display:block;border:0;margin:0;padding:0}
+.more-farm-fields>summary{display:none}
+.more-farm-fields:not([open])>.editor-group{display:block}
+.more-farm-fields>.editor-group:before{
+  content:"Skills, tools & machines";
+  display:block;
+  margin:0 0 .75rem;
+  font-family:"Pixelify Sans",monospace;
+  font-size:1rem;
+  font-weight:700;
+  color:var(--cocoa);
+}
+
+/* Expanded lesson workbook */
+.lesson-checkpoint{display:grid;grid-template-columns:78px 1fr;gap:1rem;align-items:center;margin:0 0 1rem;padding:1rem;border:2px solid var(--cocoa);border-left:8px solid var(--mustard);border-radius:5px;background:#fff0be;color:#514742}
+.lesson-checkpoint img{width:72px;height:72px;object-fit:cover;border:2px solid var(--cocoa);border-radius:4px}
+.lesson-checkpoint h2{margin:.15rem 0 .25rem;font-family:"Pixelify Sans",monospace;font-size:1.2rem;line-height:1.08;color:var(--cocoa)}
+.lesson-checkpoint p{margin:.15rem 0;font-size:.9rem}
+.lesson-chapter{display:grid;grid-template-columns:minmax(170px,.75fr) minmax(0,1.25fr);column-gap:1.25rem;align-items:start;padding:1.35rem 0;border-bottom:1px dashed #c9aa91}
+.lesson-chapter>.eyebrow,.lesson-chapter>h2{grid-column:1/-1}
+.lesson-chapter>h2{margin:.1rem 0 .8rem}
+.chapter-visual{grid-column:1;margin:0;border:2px solid var(--cocoa);border-radius:4px;overflow:hidden;background:#fff5df}
+.chapter-visual img{display:block;width:100%;height:175px;object-fit:cover;image-rendering:auto}
+.chapter-visual figcaption{padding:.45rem .55rem;font-family:"Pixelify Sans",monospace;font-size:.72rem;color:var(--cocoa)}
+.lesson-chapter>.chapter-lead,.lesson-chapter>ul{grid-column:2;margin-top:0}
+.lesson-chapter>ul{padding-left:1.2rem}
+.lesson-chapter li+li{margin-top:.45rem}
+.lesson-reference{margin:1.5rem 0;padding:1rem;border:2px solid var(--cocoa);border-radius:4px;background:#e8f2f6;color:#514742}
+.lesson-reference h2{margin:.1rem 0 .8rem;color:var(--cocoa)!important}
+.lesson-table-wrap{overflow-x:auto}
+.lesson-reference table{width:100%;border-collapse:collapse;background:#fffaf0}
+.lesson-reference th,.lesson-reference td{padding:.65rem;border:1px solid #c9aa91;text-align:left;vertical-align:top;font-size:.86rem}
+.lesson-reference th{font-family:"Pixelify Sans",monospace;color:var(--cocoa);background:#f8e3e7}
+.lesson-practice{margin:1.5rem 0;padding:1rem;border:2px solid var(--cocoa);border-left:8px solid var(--olive);border-radius:4px;background:#eef1cf;color:#514742}
+.lesson-practice h2{margin:.1rem 0 .4rem;color:var(--cocoa)!important}
+.lesson-practice ol{margin:.75rem 0 0;padding-left:1.35rem}.lesson-practice li+li{margin-top:.4rem}
+@media(max-width:720px){.lesson-chapter{grid-template-columns:1fr}.chapter-visual,.lesson-chapter>.chapter-lead,.lesson-chapter>ul{grid-column:1/-1}.chapter-visual{margin-bottom:.9rem}.chapter-visual img{height:190px}.lesson-checkpoint{grid-template-columns:58px 1fr}.lesson-checkpoint img{width:54px;height:54px}.lesson-checkpoint h2{font-size:1rem}}
+.lesson-body .deep-section{display:grid;grid-template-columns:minmax(170px,.72fr) minmax(0,1.28fr);column-gap:1.25rem;align-items:start;padding:1.5rem 0}
+.lesson-body .deep-section>h2{grid-column:1/-1;margin:.1rem 0 .85rem}
+.lesson-body .deep-section>.chapter-visual{grid-column:1}
+.lesson-body .deep-section>.deep-copy{grid-column:2}
+.lesson-body .deep-section>.deep-copy>p:first-child{margin-top:0}
+@media(max-width:720px){.lesson-body .deep-section{grid-template-columns:1fr}.lesson-body .deep-section>.chapter-visual,.lesson-body .deep-section>.deep-copy{grid-column:1/-1}.lesson-body .deep-section>.chapter-visual{margin-bottom:.9rem}}
