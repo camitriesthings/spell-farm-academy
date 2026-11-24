@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#556b55">
+  <meta name="description" content="Spell Farm Academy — a cozy, spoiler-light Stardew Valley 101 guide for Meadowlands Spell Farm.">
+  <title>Spell Farm Academy</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="prompt.css">
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="topbar">
+    <a class="brand" href="#dashboard" aria-label="Spell Farm Academy home"><span class="brand-mark" aria-hidden="true">✦</span><span>Spell Farm<br><strong>Academy</strong></span></a>
+    <button class="menu-button" id="menuButton" aria-expanded="false" aria-controls="mainNav">Menu</button>
+    <nav id="mainNav" aria-label="Main navigation">
+      <a href="#dashboard">My farm</a><a href="#lessons">Lessons</a><a href="#villagers">Villagers</a><a href="#map">Map guide</a><a href="#crops">Crops</a><a href="#tools">Calculators</a>
+    </nav>
+  </header>
+  <main id="main" tabindex="-1"></main>
+  <footer><span>Made for Meadowlands Spell Farm</span><span>Unofficial fan guide · spoiler-light · progress stays in this browser</span></footer>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script src="app.js"></script>
+</body>
+</html>
