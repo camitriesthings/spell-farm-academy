@@ -1,0 +1,84 @@
+:root{
+  --cream:#fff8df;--paper:#fffdf0;--sage:#6d8d47;--deep:#365f3b;--moss:#83aa58;
+  --gold:#f6b918;--rust:#bd5a39;--ink:#3a3027;--muted:#6b5d50;--line:#a8743d;
+  --snow:#dff5fb;--sky:#bfeafb;--sky-deep:#7dc9e5;--pink:#f7d7dc;--lilac:#e8daf3;
+  --mint:#e2f0cf;--butter:#fff0c3;--blue-panel:#d9eef5;
+  --shadow:0 5px 0 rgba(116,73,35,.18),0 10px 24px rgba(84,74,45,.12);
+  font-family:"Trebuchet MS","Arial Rounded MT Bold",Arial,sans-serif;
+  color:var(--ink);background:var(--sky);font-size:16px
+}
+body{
+  background-color:var(--sky);
+  background-image:
+    radial-gradient(circle at 8% 7%,#fff 0 3px,transparent 4px),
+    radial-gradient(circle at 92% 12%,rgba(255,255,255,.9) 0 2px,transparent 3px),
+    linear-gradient(180deg,var(--sky) 0 15rem,#eef8da 15rem 100%);
+  background-size:46px 46px,58px 58px,100% 100%;
+  letter-spacing:.005em
+}
+body:before,body:after{content:"";position:fixed;z-index:-1;width:130px;height:38px;background:#fff;border:3px solid rgba(91,132,143,.16);border-radius:60px;filter:drop-shadow(0 4px 0 rgba(68,109,121,.1))}
+body:before{left:3vw;top:112px;box-shadow:31px -16px 0 -4px #fff,70px -2px 0 -8px #fff}
+body:after{right:4vw;top:150px;box-shadow:-35px -14px 0 -3px #fff,-72px 0 0 -9px #fff}
+.topbar{background:rgba(255,248,223,.97);border-bottom:4px solid #98622f;box-shadow:0 3px 0 rgba(72,45,22,.2)}
+.brand{font-family:"Arial Rounded MT Bold","Trebuchet MS",sans-serif;color:#76441d;text-transform:uppercase;letter-spacing:.03em}
+.brand-mark{background:#6e9d43;color:#ffe05d;clip-path:polygon(50% 0,62% 34%,100% 50%,62% 66%,50% 100%,38% 66%,0 50%,38% 34%);filter:drop-shadow(2px 2px 0 #3e5d2c)}
+.brand strong{color:#3d743d;text-shadow:1px 1px 0 #fff}
+.topbar nav a{color:#6a4325;border:2px solid transparent;border-radius:6px}
+.topbar nav a:hover,.topbar nav a:focus-visible{background:#ffedb6;border-color:#c18c4d}
+.menu-button{border:3px solid #81522f;background:#ffedb6;color:#5b371f;box-shadow:2px 2px 0 #b4834f;font-weight:800}
+main{width:min(1200px,calc(100% - 2rem))}
+.hero-copy,.winter-card,.card,.lesson-card,.lesson-body,.villager,.calc-card,.crop-table,.map-place{
+  border:3px solid rgba(119,78,37,.7);box-shadow:var(--shadow);border-radius:10px
+}
+.hero-copy{
+  background:linear-gradient(180deg,#84d4eb 0 55%,#9bcf6d 55% 68%,#6ea34b 68% 100%);
+  color:#392814;border-color:#825025;overflow:hidden
+}
+.hero-copy:before{content:"";position:absolute;inset:auto 0 26% 0;height:18px;background:repeating-linear-gradient(90deg,#4b8338 0 13px,#75a64b 13px 26px);opacity:.55}
+.hero-copy:after{content:"✦";right:1.5rem;bottom:auto;top:1rem;font-size:5rem;color:#fff4a6;text-shadow:3px 3px 0 #ce8d1f;opacity:.95}
+.hero h1,.page-head h1{font-family:"Arial Rounded MT Bold","Trebuchet MS",sans-serif;font-weight:900;letter-spacing:-.035em;color:#fff4c7;text-transform:uppercase;text-shadow:3px 3px 0 #7b4821,-2px -2px 0 #7b4821,2px -2px 0 #7b4821,-2px 2px 0 #7b4821;line-height:1.02}
+.hero h1 em{color:#ffd229;font-style:normal;font-weight:900;text-shadow:3px 3px 0 #7b4821,-2px -2px 0 #7b4821,2px -2px 0 #7b4821,-2px 2px 0 #7b4821}
+.hero-copy p{font-weight:700;text-shadow:0 1px 0 rgba(255,255,255,.5)}
+.eyebrow{color:#9f482f;font-family:"Arial Rounded MT Bold","Trebuchet MS",sans-serif;font-weight:900}
+.hero-copy .eyebrow{color:#69421f;background:#fff4c7;border:2px solid #8a5a2d;display:inline-block;padding:.22rem .55rem;border-radius:4px;text-shadow:none}
+.button,.button:visited{background:#f4b91e;color:#4e321b;border:3px solid #815027;border-radius:6px;box-shadow:3px 3px 0 #9d6b37;text-transform:none}
+.button:hover,.button:focus-visible{background:#ffd956;transform:translate(-1px,-1px);box-shadow:4px 4px 0 #9d6b37}
+.button.secondary{background:#fff5d0;color:#5c3921;border-color:#936039}
+.hero-copy .button{background:#ffd32a;color:#4d311b;border-color:#74451f}.hero-copy .button.secondary{background:#fff8d9;color:#50311c;border-color:#74451f}
+.winter-card{background:linear-gradient(180deg,#fffdf0,#f7efd0)}
+.winter-card .day{border-color:#bd8a4d}.day strong{color:#ba621f;text-shadow:1px 1px 0 #fff}
+.stat{background:#e7f2d2;border:2px solid #9db272}.stat:nth-child(2){background:#fff0bc;border-color:#d7ab50}.stat:nth-child(3){background:#dcedf5;border-color:#84b5cb}.stat:nth-child(4){background:#f2ddea;border-color:#c392ae}
+.stat b{color:#365f3b}
+.section-title h2{font-family:"Arial Rounded MT Bold","Trebuchet MS",sans-serif;font-weight:900;color:#4d7136;text-shadow:1px 1px 0 #fff}
+.card{background:#fffdf0}.card-grid .card:nth-child(4n+1){background:var(--mint);border-color:#7f9d54}.card-grid .card:nth-child(4n+2){background:var(--butter);border-color:#c58b38}.card-grid .card:nth-child(4n+3){background:var(--blue-panel);border-color:#689db5}.card-grid .card:nth-child(4n){background:var(--pink);border-color:#c9787d}
+.card h3,.lesson-card h2{font-family:"Arial Rounded MT Bold","Trebuchet MS",sans-serif;color:#426b3d}
+.progress-track{background:#e3d6b1;border:2px solid #aa7c43;height:14px}.progress-track i{background:repeating-linear-gradient(90deg,#f9c72d 0 14px,#e8a91d 14px 28px)}
+.badge{background:#fff7cf;border:2px solid #a97b3f;color:#75431f}
+.notice{background:#e6f2d2;border:3px solid #83a55a;border-left-width:9px;box-shadow:3px 3px 0 rgba(102,126,73,.18)}
+.page-head{border-bottom:5px solid #b78446;background:#fff6cf;border:3px solid #9b6633;border-radius:8px;padding:1.25rem;box-shadow:var(--shadow)}
+.page-head h1{font-size:clamp(2.15rem,5.4vw,4.4rem);color:#f6bd19;text-shadow:3px 3px 0 #74451f,-2px -2px 0 #74451f,2px -2px 0 #74451f,-2px 2px 0 #74451f}
+.page-head p{color:#5b4d40;font-weight:700}
+.lesson-card{background:#fffdf1;border-color:#a16f3d}.lesson-card:nth-child(6n+1){background:#e3f0d1}.lesson-card:nth-child(6n+2){background:#fff0c4}.lesson-card:nth-child(6n+3){background:#eadff4}.lesson-card:nth-child(6n+4){background:#f7dfe1}.lesson-card:nth-child(6n+5){background:#dceef6}.lesson-card:nth-child(6n){background:#f6e8cc}
+.lesson-card:hover{transform:translate(-2px,-3px);box-shadow:5px 7px 0 rgba(116,73,35,.24)}
+.lesson-no{background:#f2b61a;color:#fff8d2;border:3px solid #79471f;border-radius:5px;text-shadow:2px 2px 0 #79471f;box-shadow:2px 2px 0 #9d6d38;font-weight:900}
+.check{color:#4d7b40}
+.lesson-body{background:#fffdf0}.lesson-body h2{font-family:"Arial Rounded MT Bold","Trebuchet MS",sans-serif;color:#47723e}.lesson-body h3{color:#ae523c}.lesson-side{background:#fff0c7;border-color:#a56c33}
+.tip{background:#dff1d0;border:3px solid #80a259;box-shadow:3px 3px 0 rgba(79,111,62,.18)}
+.quiz{border-color:#bd8c4d}.question{background:#e1edf6;border:2px solid #80adc0;border-radius:7px;padding:1rem}
+.field input,.field select,.directory-tools input{border:2px solid #9b744d;background:#fffef5;border-radius:5px}
+.snapshot-table th,.snapshot-table td{border-color:#ba915d}.snapshot-table th{color:#88512d}
+.villager{background:#fffdf0}.villager:nth-child(5n+1){background:#e5f0d6}.villager:nth-child(5n+2){background:#f8dfe3}.villager:nth-child(5n+3){background:#e4dcf1}.villager:nth-child(5n+4){background:#dceff5}.villager:nth-child(5n){background:#fff0c4}
+.portrait{border:3px solid #704524;border-radius:4px;box-shadow:2px 2px 0 #aa7a49;background:linear-gradient(135deg,var(--avatar),#ffe59b)}
+.villager h2{font-family:"Arial Rounded MT Bold","Trebuchet MS",sans-serif;color:#4a6f3b}
+.map-place{border-color:#80502d}.mountain{background:#d8eaf2}.mine{background:#ddd8e9}.farm{background:#dff0c8}.town{background:#ffe9ad}.beach{background:#cdeef3}.forest{background:#c8e3b3}
+.map-place h2{font-family:"Arial Rounded MT Bold","Trebuchet MS",sans-serif;color:#526f35}
+.crop-tabs button{border:3px solid #80502d;background:#fff0c5;color:#65401f;font-weight:900;box-shadow:2px 2px 0 #b0814b}.crop-tabs button.active{background:#71a752;color:#fff9d8;text-shadow:1px 1px 0 #43652f}
+.crop-table th{background:#71a752;color:#fff9dc;text-shadow:1px 1px 0 #365326}.crop-table th,.crop-table td{border-color:#c09a66}.crop-table tbody tr:nth-child(even){background:#edf4dd}
+.calc-card:nth-child(1){background:#e5f1d4}.calc-card:nth-child(2){background:#dcedf5}.calc-card output{background:#fff4c8;color:#684421;border:3px solid #9b6633;text-shadow:none;font-weight:900}
+.range-line input[type=range]{accent-color:#6e9f4b}
+.prompt-box summary{color:#47723e}.prompt-box textarea{border:3px solid #9c6b3c;background:#fffdf0;font-family:"Trebuchet MS",Arial,sans-serif}
+footer{background:#6c4930;color:#fff4ce;border-top:5px solid #9e703f}
+.toast{background:#4c713b;color:#fff9d6;border:3px solid #2f4c2b;box-shadow:3px 3px 0 #906332}
+@media(max-width:900px){.topbar nav{background:#fff7d4;border:3px solid #8b5930}.hero-copy:after{font-size:3.5rem}.page-head{padding:1rem}}
+@media(max-width:650px){body:before,body:after{display:none}.hero h1,.page-head h1{text-shadow:2px 2px 0 #74451f,-1px -1px 0 #74451f,1px -1px 0 #74451f,-1px 1px 0 #74451f}.hero-copy{padding-top:1.5rem}.hero-copy:after{font-size:2.8rem}}
+@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important}.lesson-card:hover,.button:hover{transform:none}}
