@@ -31,14 +31,16 @@ main{width:min(1200px,calc(100% - 2rem))}
   border:3px solid rgba(119,78,37,.7);box-shadow:var(--shadow);border-radius:10px
 }
 .hero-copy{
-  background:linear-gradient(180deg,#84d4eb 0 55%,#9bcf6d 55% 68%,#6ea34b 68% 100%);
-  color:#392814;border-color:#825025;overflow:hidden
+  background-image:linear-gradient(180deg,rgba(5,16,66,.04) 0 48%,rgba(4,31,44,.22) 72%,rgba(5,25,29,.55) 100%),url("assets/stardew-valley-wallpaper.jpeg");
+  background-position:center center;background-size:cover;background-repeat:no-repeat;
+  color:#fff8df;border-color:#825025;overflow:hidden
 }
-.hero-copy:before{content:"";position:absolute;inset:auto 0 26% 0;height:18px;background:repeating-linear-gradient(90deg,#4b8338 0 13px,#75a64b 13px 26px);opacity:.55}
+.hero-copy:before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(4,15,57,.28),transparent 72%);pointer-events:none}
 .hero-copy:after{content:"✦";right:1.5rem;bottom:auto;top:1rem;font-size:5rem;color:#fff4a6;text-shadow:3px 3px 0 #ce8d1f;opacity:.95}
 .hero h1,.page-head h1{font-family:"Arial Rounded MT Bold","Trebuchet MS",sans-serif;font-weight:900;letter-spacing:-.035em;color:#fff4c7;text-transform:uppercase;text-shadow:3px 3px 0 #7b4821,-2px -2px 0 #7b4821,2px -2px 0 #7b4821,-2px 2px 0 #7b4821;line-height:1.02}
 .hero h1 em{color:#ffd229;font-style:normal;font-weight:900;text-shadow:3px 3px 0 #7b4821,-2px -2px 0 #7b4821,2px -2px 0 #7b4821,-2px 2px 0 #7b4821}
-.hero-copy p{font-weight:700;text-shadow:0 1px 0 rgba(255,255,255,.5)}
+.hero-copy>p:not(.eyebrow){position:relative;z-index:1;display:block;width:fit-content;max-width:58ch;padding:.45rem .65rem;background:rgba(5,27,48,.72);border:2px solid rgba(255,248,213,.72);border-radius:5px;color:#fffbe8;font-weight:700;text-shadow:1px 1px 0 #163344}
+.hero-copy h1,.hero-copy .button-row,.hero-copy .eyebrow{position:relative;z-index:1}
 .eyebrow{color:#9f482f;font-family:"Arial Rounded MT Bold","Trebuchet MS",sans-serif;font-weight:900}
 .hero-copy .eyebrow{color:#69421f;background:#fff4c7;border:2px solid #8a5a2d;display:inline-block;padding:.22rem .55rem;border-radius:4px;text-shadow:none}
 .button,.button:visited{background:#f4b91e;color:#4e321b;border:3px solid #815027;border-radius:6px;box-shadow:3px 3px 0 #9d6b37;text-transform:none}
