@@ -236,7 +236,7 @@ footer{background:var(--deep);border-top:6px solid var(--tangerine)}.toast{backg
 
 /* Cloud sync and farm scrapbook */
 .cloud-status{display:inline-flex!important;align-items:center;margin-top:1rem!important;padding:.45rem .7rem!important;border:1px solid rgba(255,255,255,.5)!important;border-radius:999px!important;background:rgba(20,34,62,.72)!important;color:#fff!important;font-size:.82rem!important;font-weight:700!important}
-.farm-photo-display{width:100%;margin:1.4rem 0 2.2rem;overflow:hidden;border:1.5px solid var(--deep);border-radius:16px;background:#17243a;box-shadow:var(--shadow)}.farm-photo-display[hidden]{display:none}.farm-photo-display img{display:block;width:100%;height:auto;max-height:70vh;object-fit:contain}
+.farm-photo-display{width:100%;margin:1.25rem 0 1.5rem;overflow:hidden;border:0;border-radius:12px;background:transparent;box-shadow:none}.farm-photo-display[hidden]{display:none}.farm-photo-display img{display:block;width:100%;height:auto;max-height:70vh;object-fit:contain;background:transparent}
 .farm-photo-editor{margin:1rem 0 1.25rem;padding:1rem;border:1px solid var(--line);border-radius:13px;background:var(--paper)}
 .farm-photo-copy h3{margin:0 0 .3rem;color:var(--deep)}.farm-photo-copy p{margin:.35rem 0;color:var(--muted)}.farm-photo-actions{display:flex;flex-wrap:wrap;gap:.55rem;align-items:center;margin:.8rem 0 .45rem}
 #farmPhotoInput{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0)}.photo-picker{display:inline-flex;align-items:center;min-height:44px;padding:.65rem .85rem;border:1.5px dashed var(--deep);border-radius:8px;background:#eef7fd;color:var(--deep);font-weight:700;cursor:pointer}#removeFarmPhoto[hidden]{display:none}
