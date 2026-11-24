@@ -301,3 +301,46 @@ footer{padding-block:1rem;border-top:0;background:#33485d;font-size:.76rem}
 @media(max-width:1180px){.topbar nav{background:#fffdfa;border:1px solid var(--line);box-shadow:var(--shadow)}}
 @media(max-width:760px){main{width:min(100% - 1.1rem,1160px);padding-top:1rem}.hero h1{font-size:2.55rem}.page-head{min-height:190px;padding:2.4rem 1rem 1.15rem}.page-head h1{font-size:2.1rem}.today-feature{grid-template-columns:1fr}.farm-photo-display img{min-height:0;max-height:none;object-fit:contain}.brief-heading h2{font-size:1.8rem}.timeline-item{grid-template-columns:1fr;gap:.05rem}.section-title h2{font-size:1.65rem}.today-alerts{grid-template-columns:1fr}}
 @media(max-width:440px){.brand-mark{width:34px;height:34px}.brand{font-size:.84rem}.topbar{padding-inline:.7rem}.hero-copy{padding:1.55rem 1.05rem}.hero h1{font-size:2.25rem}.winter-card{padding:.9rem!important}.button{font-size:.86rem}.villager-grid{grid-template-columns:1fr 1fr}.daily-brief,.farm-editor{padding:1rem}}
+
+/* Pixel editorial system — compact, flat, and intentionally Stardew-inspired */
+@font-face{font-family:"Pixelify Sans";src:url("assets/fonts/pixelify-sans-600.ttf") format("truetype");font-weight:600;font-style:normal;font-display:swap}
+@font-face{font-family:"Pixelify Sans";src:url("assets/fonts/pixelify-sans-700.ttf") format("truetype");font-weight:700;font-style:normal;font-display:swap}
+:root{
+  --cocoa:#6b342a;--pink:#f3a8b6;--sky:#9ccbe3;--orange:#f9a24a;--mustard:#f4c816;--olive:#adb637;
+  --cream:#fffaf0;--paper:#fffdf8;--deep:#4a302e;--ink:#302927;--muted:#70635f;--line:#d8ccc1;
+  --shadow:0 4px 14px rgba(71,48,42,.07)
+}
+body{background:#fffaf0;color:var(--ink)}
+h1,h2,h3,.brand,.eyebrow,.section-title h2,.lesson-body h2,.lesson-card h2,.card h3,.reference-card h2,.today-alert h3,.timeline-item h3,.easy-food-intro h2,.skill-level-banner span{
+  font-family:"Pixelify Sans",ui-monospace,monospace;letter-spacing:-.015em;font-weight:700
+}
+.topbar{padding-block:.48rem;border-bottom:3px solid var(--cocoa);background:#fffdf7;box-shadow:none}
+.brand{font-size:.96rem;line-height:.95;color:var(--cocoa)}.brand strong{color:#bf4f72}.brand-mark{width:36px;height:36px;border:2px solid var(--cocoa);border-radius:4px}
+.topbar nav{gap:.05rem}.topbar nav a{display:inline-flex;align-items:center;gap:.3rem;padding:.4rem .42rem;border-radius:4px;font-size:.81rem;font-weight:650;color:#4b3733}
+.nav-icon{width:17px;height:17px;flex:0 0 17px;object-fit:contain;image-rendering:pixelated}.topbar nav a:hover,.topbar nav a:focus-visible{background:#f8dfe4;color:var(--cocoa)}
+.topbar nav a:nth-last-child(1){margin-left:.2rem;background:#fff0be;border:1px solid #dbc268}.topbar nav a:nth-last-child(1):hover{background:#f4c816}
+.menu-button{min-height:38px;border:2px solid var(--cocoa);border-radius:5px;background:#fff0be;color:var(--cocoa);font-family:"Pixelify Sans",monospace;font-weight:700}
+.hero-copy{border:2px solid var(--cocoa);border-radius:6px;box-shadow:5px 5px 0 rgba(107,52,42,.12)}
+.hero h1{font-size:clamp(2.25rem,4.3vw,3.5rem);line-height:.92;letter-spacing:-.035em}.hero h1 em{font-weight:700}.hero-copy>p:not(.eyebrow){font-size:.96rem}.hero-copy .eyebrow{font-size:.74rem;color:#fff0a8}
+.winter-card{border:2px solid var(--cocoa)!important;border-top:7px solid var(--pink)!important;border-radius:6px!important}.day strong{font-family:"Pixelify Sans",monospace;font-size:1.58rem}.season-icon{width:42px;height:42px;object-fit:contain;image-rendering:pixelated}.stat{border-radius:4px!important}.stat b{font-family:"Pixelify Sans",monospace;font-size:.72rem;letter-spacing:.01em}.stat span{font-size:1.02rem}
+.button,.button:visited,.button.secondary,.hero-copy .button,.hero-copy .button.secondary{min-height:38px;border:2px solid var(--cocoa);border-radius:4px;font-size:.86rem;font-weight:700}
+.button,.button:visited{background:var(--orange)}.button.secondary{background:#fff0be}.button:hover,.button:focus-visible{background:var(--pink)}.hero-copy .button{background:var(--mustard)}
+.page-head{min-height:190px;border:2px solid var(--cocoa);border-radius:6px;box-shadow:5px 5px 0 rgba(107,52,42,.1)}.page-head h1{font-size:clamp(1.9rem,3.8vw,3rem);line-height:.94}.page-head p{font-size:.92rem}
+.section{margin-top:2rem}.section-title h2{font-size:clamp(1.35rem,2.3vw,1.85rem);line-height:1}.section-title p{font-size:.92rem}.eyebrow{font-size:.7rem;letter-spacing:.075em;color:#a13d5e}
+.today-summary-panel{border:2px solid var(--cocoa);border-radius:6px;background:#eaf5fb}.brief-heading h2{font-size:clamp(1.55rem,3vw,2.1rem);line-height:.98}.brief-heading p{font-size:.88rem}
+.today-alert{border:1px solid #c8b9b0;border-radius:5px}.birthday-alert{border-top:5px solid var(--pink)}.event-alert{border-top:5px solid var(--orange)}.alert-icon{width:36px;height:36px;border:0;border-radius:4px;background:transparent}.alert-icon img{display:block;width:32px;height:32px;object-fit:contain;image-rendering:pixelated}.today-alert h3{font-size:.94rem}.today-alert p{font-size:.86rem}
+.day-timeline{border:2px solid var(--cocoa);border-left:7px solid var(--pink);border-radius:6px;background:#fffaf2}.timeline-item{grid-template-columns:122px 1fr}.timeline-item:before{left:-9px;width:18px;height:18px;border-radius:0;background-color:transparent!important;background-position:center;background-repeat:no-repeat;background-size:contain;image-rendering:pixelated;box-shadow:none}.timeline-item:nth-child(4n+1):before{background-image:url("assets/crops/blueberry.png")}.timeline-item:nth-child(4n+2):before{background-image:url("assets/crops/strawberry.png")}.timeline-item:nth-child(4n+3):before{background-image:url("assets/crops/cauliflower.png")}.timeline-item:nth-child(4n):before{background-image:url("assets/crops/hot-pepper.png")}.timeline-item time{font-family:"Pixelify Sans",monospace;font-size:.84rem;color:#9b3658}.timeline-item h3{font-size:.92rem}.timeline-item p{font-size:.88rem}
+.card,.lesson-card,.reference-card,.villager,.calc-card,.hidden-card,.weapon-place,.map-photo-card,.farm-editor{border:1px solid var(--line)!important;border-radius:6px!important;box-shadow:var(--shadow)!important}.card h3{font-size:.98rem}.card p{font-size:.9rem}.badge{border-radius:3px;font-family:"Pixelify Sans",monospace;font-size:.68rem}
+.lesson-card{grid-template-columns:58px 1fr auto}.lesson-card h2{font-size:1rem}.lesson-card p{font-size:.86rem}.lesson-no{width:44px;height:44px;border-radius:3px;background:var(--cocoa);font-family:"Pixelify Sans",monospace;font-size:1rem}
+.lesson-body h2{font-size:1.28rem}.lesson-body h3{font-size:1.05rem}.lesson-body .deep-section p{font-size:.96rem}.lesson-side{border-radius:5px!important}.lesson-side button{font-size:.86rem}.lesson-media-grid figure{border-radius:5px}
+.reference-card h2{font-size:1.05rem}.reference-card p{font-size:.88rem}.reference-card>img{border-radius:4px}
+.farm-editor{border:2px solid var(--cocoa)!important;border-top:7px solid var(--pink)!important}.editor-group{border-radius:4px}.editor-group h3,.farm-photo-copy h3{font-family:"Pixelify Sans",monospace;font-size:1rem}.field label{font-size:.74rem}.field input,.field select,.directory-tools input,.recipe-tools input,.recipe-tools select{min-height:40px;border:1px solid #bcaea4;border-radius:4px;font-size:.9rem}
+.season-tab,.crop-tabs button,.skill-tabs button{min-height:38px;border:1px solid var(--cocoa);border-radius:4px;font-size:.86rem}.season-tab.active,.crop-tabs button.active,.skill-tabs button.active{background:var(--olive);border-color:#737b20;color:#282b11}
+.notice,.tip,.question,.skill-level-banner,.easy-food-intro,.crop-sale-guide{border-radius:5px}.notice,.tip{border-left-color:var(--pink)}
+.progress-track{height:10px;border:1px solid var(--cocoa);border-radius:0}.progress-track i{background:var(--olive)}
+.calendar-day,.event-detail-card{border-radius:4px}.calendar-event{border-radius:3px}.calendar-event strong,.event-detail-card h3{font-family:"Pixelify Sans",monospace}
+.calc-card output,.crop-calc-output{border-radius:4px;background:var(--cocoa)}.world-map-card{border:2px solid var(--cocoa);border-radius:6px}.map-pin{border-radius:4px}.map-pin b{font-family:"Pixelify Sans",monospace}
+footer{border-top:5px solid var(--orange);background:var(--cocoa)}
+@media(max-width:1180px){.topbar nav{border:2px solid var(--cocoa);border-radius:5px;background:#fff8e7}.topbar nav a{font-size:.88rem;padding:.5rem}.topbar nav a:nth-last-child(1){margin-left:0}}
+@media(max-width:760px){.hero h1{font-size:2.05rem}.page-head h1{font-size:1.9rem}.brief-heading h2{font-size:1.55rem}.section-title h2{font-size:1.35rem}.timeline-item{grid-template-columns:1fr}.timeline-item:before{top:.75rem}.today-alert h3{font-size:.9rem}.card h3{font-size:.94rem}}
+@media(max-width:440px){.brand{font-size:.88rem}.hero h1{font-size:1.95rem}.hero-copy>p:not(.eyebrow){font-size:.9rem}.page-head{min-height:175px}.page-head h1{font-size:1.75rem}.lesson-card{grid-template-columns:48px 1fr}.lesson-card .check{grid-column:2}.nav-icon{width:18px;height:18px}}
