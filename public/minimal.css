@@ -246,3 +246,58 @@ footer{background:var(--deep);border-top:6px solid var(--tangerine)}.toast{backg
 @media(max-width:900px){.today-photo-layout{grid-template-columns:1fr}.today-photo-layout .farm-photo-display{margin:0}}
 @media(max-width:760px){.lesson-visuals{grid-template-columns:1fr}.lesson-visuals img{height:210px}.profile-facts{grid-template-columns:1fr}.home-photo{height:170px}}
 @media(max-width:440px){.topbar{padding-inline:.8rem}.brand{font-size:.92rem}.farm-photo-editor{padding:.8rem}.button-row{gap:.45rem}.button{width:auto}.daily-brief,.farm-editor{padding:1rem}.editable-grid,.compact-fields,.plan-grid{grid-template-columns:1fr}.timeline-item{padding-left:.85rem}.page-head{padding:2.2rem 1rem 1.2rem;min-height:220px}.page-head h1{font-size:2.15rem}.reference-card{grid-template-columns:62px 1fr}.reference-card>img{width:58px;height:58px}.crop-sale{grid-column:1/-1}.villager-grid{grid-template-columns:1fr 1fr}footer span{display:block}footer span+span{margin-top:.5rem}}
+
+/* Human editorial pass — quieter type, intentional color, fewer template effects */
+:root{
+  --cream:#fbf7f0;--paper:#fffdfa;--deep:#33485d;--ink:#302d2f;--muted:#6f6869;
+  --line:#ded7ce;--shadow:0 5px 18px rgba(43,52,61,.07);
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Helvetica Neue",Arial,sans-serif;
+  font-size:16px;font-weight:400
+}
+body{background:var(--cream);background-image:none;color:var(--ink);line-height:1.55}
+h1,h2,h3,.brand,.hero h1,.page-head h1,.section-title h2,.lesson-body h2,.lesson-card h2,.card h3,.reference-card h2,.today-alert h3,.timeline-item h3,.easy-food-intro h2{
+  font-family:inherit;letter-spacing:-.025em;text-transform:none;text-shadow:none
+}
+p{line-height:1.6}.tiny{font-size:.76rem}.eyebrow{font-size:.7rem;letter-spacing:.11em;font-weight:750;color:#a44766}
+main{width:min(1160px,calc(100% - 2rem));padding-top:2rem}
+.topbar{padding-block:.58rem;background:rgba(255,253,250,.97);border-bottom:1px solid var(--line);box-shadow:0 2px 12px rgba(48,45,47,.05)}
+.brand{gap:.55rem;font-size:.9rem;line-height:1.05;letter-spacing:0}.brand strong{color:#9f3e60}
+.brand-mark{width:38px;height:38px;border:1px solid #dfd6c8;background:#fff;box-shadow:none}
+.topbar nav{gap:0}.topbar nav a{padding:.45rem .5rem;border:0;font-size:.875rem;font-weight:600;color:#48515a}
+.topbar nav a:hover,.topbar nav a:focus-visible{background:#edf3f7;color:#253c52;border:0}
+.menu-button{border:1px solid #cfc6bd;background:#fff7da;box-shadow:none;font-size:.9rem}
+.hero{gap:1rem}.hero-copy{padding:clamp(1.75rem,4.2vw,3.6rem);border:0;border-radius:12px;box-shadow:0 9px 26px rgba(35,51,69,.16);background-color:#4a5874;background-image:url("assets/stardew-valley-wallpaper.jpeg");background-blend-mode:multiply}
+.hero-copy .eyebrow{color:#fff0a8}.hero h1{font-size:clamp(2.6rem,5vw,4.35rem);line-height:.98;margin:.3rem 0 1rem;font-weight:720}.hero h1 em{color:#fff0a8;font-weight:720}
+.hero-copy>p:not(.eyebrow){font-size:1rem;font-weight:450;line-height:1.55}.cloud-status{font-size:.72rem!important}
+.winter-card{padding:1.25rem!important;border:1px solid var(--line)!important;border-top:5px solid var(--lavender)!important;border-radius:12px!important;background:var(--paper)!important;box-shadow:var(--shadow)!important}
+.day strong{font-size:1.75rem}.season-icon{font-size:2.25rem}.stat{padding:.68rem;border-radius:8px!important}.stat b{font-size:.7rem}.stat span{font-size:1.12rem}
+.button,.button:visited,.button.secondary,.hero-copy .button,.hero-copy .button.secondary{min-height:40px;padding:.58rem .82rem;border:1px solid rgba(48,45,47,.22);border-radius:7px;box-shadow:none;font-size:.9rem;font-weight:650}
+.button,.button:visited{background:#f28b4b;color:#312c2a}.button.secondary{background:#fff4ce;color:#3c3a38}.button:hover,.button:focus-visible{background:#f6a177;transform:none;box-shadow:none}
+.hero-copy .button{background:#f4d77a;color:#2f3032}.hero-copy .button.secondary{background:rgba(255,255,255,.88);color:#33485d}
+.farm-photo-display{margin:0;border:1px solid var(--line);border-radius:10px;background:#f0ebe3;box-shadow:none;overflow:hidden}
+.farm-photo-display img{width:100%;height:100%;min-height:290px;max-height:430px;object-fit:cover;border-radius:9px;background:transparent}
+.today-photo-layout{display:block;margin:0}.today-photo-layout .farm-photo-display,.today-photo-layout .daily-brief{margin:0 0 1.75rem}
+.daily-brief{margin-top:1.5rem;padding:0;border:0;border-radius:0;background:transparent;box-shadow:none}.today-feature{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:.85rem;align-items:stretch}.today-feature:has(.farm-photo-display[hidden]){grid-template-columns:1fr}.today-summary-panel{padding:1rem;border:1px solid #ccd9e3;border-radius:10px;background:#eef5fa}
+.brief-heading{align-items:flex-start;margin-bottom:1rem}.brief-heading h2{font-size:clamp(1.8rem,3.4vw,2.55rem);line-height:1.08;font-weight:700}.brief-heading p{font-size:.95rem}
+.today-alerts{gap:.75rem}.today-alert{grid-template-columns:38px 1fr;gap:.65rem;padding:.9rem;border:1px solid var(--line);border-radius:10px;box-shadow:none}.birthday-alert{background:#fff6f8;border-top:3px solid var(--pink)}.event-alert{background:#fff8f1;border-top:3px solid var(--tangerine)}
+.alert-icon{width:34px;height:34px;font-size:1.05rem}.today-alert h3{font-size:1.02rem}.today-alert p{font-size:.92rem}
+.day-timeline{margin-top:.85rem;padding:.85rem 1rem .35rem 1.15rem;border:1px solid #e1d7c9;border-left:5px solid var(--lavender);border-radius:10px;background:#fffaf2}.timeline-item{grid-template-columns:130px 1fr;gap:.75rem;padding:.55rem 0 .7rem 1.1rem}.timeline-item:before{left:-6px;width:8px;height:8px;box-shadow:0 0 0 3px #fffaf2}.timeline-item time{font-size:.88rem}.timeline-item h3{font-size:1rem}.timeline-item p{font-size:.94rem}.brief-actions{margin:.65rem 0 0;padding:0 .1rem}
+.section{margin-top:2.4rem}.section-title{align-items:flex-start;margin-bottom:.9rem}.section-title h2{font-size:clamp(1.55rem,2.7vw,2.2rem);line-height:1.1;font-weight:700}.section-title p{font-size:.95rem}
+.page-head{min-height:210px;margin-bottom:1.6rem;padding:clamp(1.25rem,3.5vw,2.2rem);border:0;border-radius:12px;box-shadow:0 8px 24px rgba(35,51,69,.13);background-color:#637089;background-image:url("assets/stardew-valley-wallpaper.jpeg");background-blend-mode:multiply}
+.page-head h1{font-size:clamp(2.15rem,4.2vw,3.55rem);line-height:1;font-weight:720}.page-head p{font-size:.97rem}
+.card,.lesson-card,.reference-card,.villager,.calc-card,.hidden-card,.weapon-place,.map-photo-card,.farm-editor{border:1px solid var(--line)!important;border-top:1px solid var(--line)!important;border-radius:10px;background:var(--paper)!important;box-shadow:var(--shadow)!important}
+.card-grid .card:nth-child(n),.reference-grid .reference-card:nth-child(n),.lesson-list .lesson-card:nth-child(n),.villager-grid .villager:nth-child(n),.expanded-calculator .calc-card:nth-child(n){background:var(--paper)!important;border-top:1px solid var(--line)!important}
+.card{padding:1.05rem}.card h3{font-size:1.08rem}.card p{font-size:.94rem}.plan-card{min-height:0}.badge{padding:.16rem .5rem;border:0;background:#fbe6ed;color:#973d5e;font-size:.7rem}
+.lesson-card{padding:.85rem}.lesson-card h2{font-size:1.08rem}.lesson-card p{font-size:.9rem}.lesson-no{width:50px;height:50px;border:0;border-radius:7px;background:#3b5064;box-shadow:none;font-size:1.15rem}
+.lesson-body{padding:clamp(1.2rem,3.5vw,2.5rem);border:1px solid var(--line)!important;background:var(--paper)!important}.lesson-body h2{font-size:1.45rem}.lesson-body .deep-section p{font-size:1rem}.lesson-side{border:1px solid #ddd1b2!important;background:#fff8dc!important}.lesson-media-grid figure{border:1px solid var(--line);box-shadow:none}
+.reference-card{padding:1rem}.reference-card h2{font-size:1.18rem}.reference-card p{font-size:.92rem}.reference-card>img,.weapon-place img{border:0!important;background:#f5f2ec}
+.farm-editor{padding:clamp(1.1rem,3vw,1.7rem);background:var(--paper)!important;border-top:4px solid var(--lavender)!important}.editor-group{padding:.8rem;border:1px solid #eee7df;background:#fff}.field label{font-size:.76rem}.field input,.field select,.directory-tools input,.recipe-tools input,.recipe-tools select{min-height:42px;border:1px solid #bbb2aa;font-size:.95rem}
+.notice,.tip{border:1px solid #d8d0df;border-left:4px solid var(--lavender);background:#f7f2fa;box-shadow:none}.question{border:1px solid #ded2ad;background:#fff8dc}
+.season-tab,.crop-tabs button,.skill-tabs button{min-height:40px;padding:.5rem .8rem;border:1px solid #cfc6bd;box-shadow:none;font-size:.9rem}.season-tab.active,.crop-tabs button.active,.skill-tabs button.active{background:#dce7b4;border-color:#aebd72;box-shadow:none;transform:none}
+.calendar-day:nth-child(n){background:var(--paper);border:1px solid #e2dbd2;box-shadow:none}.calendar-day.has-birthday{background:#fff8dc}.calendar-day.has-event{background:#eef6fb}.calendar-event{border:0;border-left:3px solid var(--pink);box-shadow:none}
+.calc-card output,.crop-calc-output,.skill-level-banner{background:#40566a;border:0;box-shadow:none}.world-map-card{border:1px solid var(--line);box-shadow:var(--shadow)}.map-pin{border:1px solid #69636a;box-shadow:0 3px 10px rgba(33,38,45,.12)}
+.easy-food-intro,.crop-sale-guide{border:1px solid #ded2ad;border-left:5px solid var(--matcha);background:#fff8dc;box-shadow:var(--shadow)}
+footer{padding-block:1rem;border-top:0;background:#33485d;font-size:.76rem}
+@media(max-width:1180px){.topbar nav{background:#fffdfa;border:1px solid var(--line);box-shadow:var(--shadow)}}
+@media(max-width:760px){main{width:min(100% - 1.1rem,1160px);padding-top:1rem}.hero h1{font-size:2.55rem}.page-head{min-height:190px;padding:2.4rem 1rem 1.15rem}.page-head h1{font-size:2.1rem}.today-feature{grid-template-columns:1fr}.farm-photo-display img{min-height:0;max-height:none;object-fit:contain}.brief-heading h2{font-size:1.8rem}.timeline-item{grid-template-columns:1fr;gap:.05rem}.section-title h2{font-size:1.65rem}.today-alerts{grid-template-columns:1fr}}
+@media(max-width:440px){.brand-mark{width:34px;height:34px}.brand{font-size:.84rem}.topbar{padding-inline:.7rem}.hero-copy{padding:1.55rem 1.05rem}.hero h1{font-size:2.25rem}.winter-card{padding:.9rem!important}.button{font-size:.86rem}.villager-grid{grid-template-columns:1fr 1fr}.daily-brief,.farm-editor{padding:1rem}}
