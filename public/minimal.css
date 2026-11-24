@@ -469,3 +469,104 @@ footer{background:#351815}
 .lesson-body .deep-section>.deep-copy{grid-column:2}
 .lesson-body .deep-section>.deep-copy>p:first-child{margin-top:0}
 @media(max-width:720px){.lesson-body .deep-section{grid-template-columns:1fr}.lesson-body .deep-section>.chapter-visual,.lesson-body .deep-section>.deep-copy{grid-column:1/-1}.lesson-body .deep-section>.chapter-visual{margin-bottom:.9rem}}
+
+/* Final unified palette — flat, warm, readable, and intentionally handmade */
+:root{
+  --cocoa:#5a2c24;--cocoa-dark:#351815;--cream:#fff5df;--paper:#fffaf0;
+  --sky:#9ccbe3;--pink:#f3a8b6;--orange:#f9a24a;--mustard:#f4c816;--olive:#adb637;
+  --ink:#382d29;--muted:#705f57;--line:#c99d82;--deep:#5a2c24;
+}
+html{background:var(--cocoa)}
+body{background:var(--cocoa)!important;background-image:none!important;color:var(--cream)}
+main{color:var(--cream)}
+.topbar{background:#fff8e8!important;border-bottom:3px solid var(--orange)!important}
+
+/* Flat image headers: no gradients, no washed-out type */
+.hero-copy,.page-head{
+  background-color:#284966!important;
+  background-image:url("assets/stardew-valley-wallpaper.jpeg")!important;
+  background-blend-mode:multiply!important;
+  background-position:center!important;background-size:cover!important;
+  border:2px solid #f2be72!important;box-shadow:5px 5px 0 #351815!important;
+}
+.hero-copy{display:flex;align-items:center;min-height:420px;padding:clamp(1.5rem,5vw,4rem)!important}
+.hero-inner{position:relative;z-index:1;max-width:620px}
+.hero-copy:before,.hero-copy:after{display:none!important}
+.hero h1,.page-head h1{color:#fff0a8!important;text-shadow:3px 3px 0 var(--cocoa)!important}
+.hero h1 em{color:#fff0a8!important}.hero-copy .eyebrow,.page-head .eyebrow{color:#ffe891!important}
+.hero-copy p,.page-head p{color:#fffdf5!important;text-shadow:1px 1px 0 rgba(53,24,21,.8)!important}
+
+/* Make every content surface readable on the cocoa canvas */
+.winter-card,.today-summary-panel,.day-timeline,.card,.lesson-card,.lesson-body,.lesson-side,
+.villager,.reference-card,.calc-card,.calendar-panel,.farm-editor,.crop-calculator,.crop-calc,
+.farm-photo-display,.map-photo-card,.building-card,.animal-card,.weapon-card,.weapon-place,
+.skill-card,.crop-table,.crop-sale-guide,.directory-tools,.recipe-tools,.course-progress,
+.easy-food-intro,.notice,.tip,.question,.lesson-checkpoint,.lesson-reference,.lesson-practice,
+.event-detail-card,.hidden-card,.building-table-wrap,.forge-table-wrap{
+  color:var(--ink)!important;background:#fffaf0!important;border-color:var(--line)!important;
+}
+.card:nth-child(3n+2),.reference-card:nth-child(3n+2),.hidden-card:nth-child(3n+2),
+.building-card:nth-child(3n+2),.animal-card:nth-child(3n+2),.skill-card:nth-child(3n+2){background:#eef7fb!important}
+.card:nth-child(3n),.reference-card:nth-child(3n),.hidden-card:nth-child(3n),
+.building-card:nth-child(3n),.animal-card:nth-child(3n),.skill-card:nth-child(3n){background:#fff0f3!important}
+.card p,.lesson-card p,.lesson-body p,.lesson-body li,.reference-card p,.hidden-card p,
+.map-photo-card p,.building-card p,.animal-card p,.weapon-card p,.weapon-place p,.skill-card p,
+.calc-card p,.villager p,.easy-food-intro p,.crop-calculator p,.crop-sale-guide p,
+.notice,.tip,.question,.lesson-checkpoint p,.lesson-practice p{color:#514742!important}
+.card h2,.card h3,.lesson-card h2,.lesson-body h2,.lesson-body h3,.reference-card h2,
+.hidden-card h2,.hidden-card h3,.map-photo-card h2,.building-card h2,.animal-card h2,
+.weapon-card h2,.weapon-place h2,.skill-card h2,.calc-card h2,.villager h2,
+.easy-food-intro h2,.crop-calculator h2,.crop-sale-guide h2{color:var(--cocoa)!important;text-shadow:none!important}
+.eyebrow{color:#a43d60!important}.tiny{color:#765f57!important}
+.section-title h2{color:#fff0a8!important;text-shadow:2px 2px 0 #351815!important}
+.section-title p{color:#ffe8d9!important}
+
+/* Components that previously inherited pale header text */
+.easy-food-intro{background:#fff1b8!important;border-left:7px solid var(--olive)!important}
+.easy-food-intro strong{color:#8a3152!important}.recipe-tools{background:#fffaf0!important;padding:.8rem;border:1px solid var(--line);border-radius:5px}
+.crop-calculator{background:#fffaf0!important;border:2px solid var(--line)!important}
+.crop-calculator .eyebrow,.crop-calculator h2,.crop-calculator p,.crop-calculator label{color:var(--cocoa)!important;text-shadow:none!important}
+.crop-calc-output,.calc-card output{background:var(--cocoa)!important;color:#fff8e7!important}.crop-calc-output span,.calc-card output span{color:#fff0d6!important}
+.notice,.tip{background:#fff0f3!important;border-left:7px solid var(--pink)!important}.notice strong,.tip strong{color:var(--cocoa)!important}
+.skill-overview{background:#fff1b8!important;color:#514742!important;border:2px solid var(--line)!important;border-left:7px solid var(--mustard)!important}
+.skill-level-banner{background:#d9eef8!important;color:var(--cocoa)!important;border:2px solid var(--line)!important;box-shadow:none!important}
+.skill-level-banner strong{color:#963756!important}
+
+/* Home baseline: same height as the hero, with readable heart levels */
+.hero{align-items:stretch!important}.hero>.baseline-card{align-self:stretch!important;height:100%;min-height:420px;align-content:center}
+.skill-level-grid{display:grid!important;grid-template-columns:1fr!important;gap:.35rem!important}
+.skill-heart-row{display:flex;align-items:center;justify-content:space-between;gap:.8rem;padding:.38rem .5rem;border:1px solid #d6b39d;border-radius:4px;background:#fff5df}
+.skill-heart-row>span{display:flex;align-items:center;gap:.38rem;font-family:"Pixelify Sans",monospace;font-size:.78rem;color:var(--cocoa)}
+.skill-heart-row img{width:19px;height:19px;object-fit:contain;image-rendering:pixelated}
+.skill-heart-row strong{font-size:.95rem;line-height:1;color:#cf4f76;letter-spacing:.08em;text-shadow:1px 1px 0 #fff}
+.skill-heart-row.mining{background:#eaf5fb}.skill-heart-row.foraging{background:#f4f1d5}.skill-heart-row.fishing{background:#eef0ff}.skill-heart-row.combat{background:#fff0f3}
+
+/* Lessons: large topic-specific visuals and workbook-like teaching blocks */
+.lesson-layout{grid-template-columns:minmax(0,1fr) 250px}.lesson-body{background:#fffaf0!important}
+.lesson-body .deep-section{display:block!important;padding:2rem 0;border-bottom:2px dashed #d6b39d}
+.lesson-body .deep-section>h2{margin:0 0 1rem!important;font-size:1.55rem!important}
+.chapter-visual,.lesson-hero-figure{margin:0 0 1rem;border:2px solid var(--cocoa);border-radius:5px;overflow:hidden;background:#fff5df}
+.chapter-visual img,.lesson-hero-figure img{display:block;width:100%;height:clamp(240px,34vw,430px);object-fit:cover}
+.lesson-hero-figure img{height:auto;max-height:none;object-fit:contain;image-rendering:auto}
+.chapter-visual figcaption,.lesson-hero-figure figcaption{padding:.65rem .8rem;color:var(--cocoa);font-family:"Pixelify Sans",monospace;background:#fff1b8}
+.deep-copy{font-size:1rem;line-height:1.72;color:#514742}
+.season-lesson-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin:0 0 1.2rem}
+.season-lesson-grid figure{margin:0;overflow:hidden;border:2px solid var(--cocoa);border-radius:5px;background:#fff}
+.season-lesson-grid img{display:block;width:100%;height:240px;object-fit:cover}
+.season-lesson-grid figcaption{display:grid;gap:.15rem;padding:.7rem;background:#fff5df;color:#514742}
+.season-lesson-grid figcaption strong{font-family:"Pixelify Sans",monospace;color:var(--cocoa);font-size:1rem}.season-lesson-grid figcaption span{font-size:.86rem}
+.sprite-teaching-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:.65rem;margin:0 0 1rem}.machine-grid{grid-template-columns:repeat(3,1fr)}
+.sprite-tile{display:grid;place-items:center;gap:.45rem;margin:0;padding:.8rem;min-height:130px;border:2px solid var(--cocoa);border-radius:5px;background:#fff1b8;text-align:center}
+.sprite-tile img{width:64px;height:64px;object-fit:contain;image-rendering:pixelated}.sprite-tile figcaption{font-family:"Pixelify Sans",monospace;font-size:.75rem;color:var(--cocoa)}
+.smelting-visual,.sprinkler-lesson{margin:0 0 1rem;padding:1rem;border:2px solid var(--cocoa);border-radius:5px;background:#eaf5fb;color:#514742}
+.smelting-visual>div,.sprinkler-recipe{display:flex;align-items:center;justify-content:center;gap:.8rem}.smelting-visual .sprite-tile,.sprinkler-recipe .sprite-tile{min-width:120px;background:#fffaf0}.smelting-visual b,.sprinkler-recipe b{font-family:"Pixelify Sans",monospace;font-size:1.6rem;color:var(--cocoa)}
+.sprinkler-layout{display:grid;grid-template-columns:repeat(3,74px);gap:5px;justify-content:center;margin:1.2rem auto}
+.sprinkler-layout span{display:grid;place-items:center;width:74px;height:74px;border:2px solid #8b5c3d;font-family:"Pixelify Sans",monospace;font-size:.65rem}
+.watered-tile{background:#b8d26f;color:#365028}.sprinkler-center{background:#9ccbe3}.sprinkler-center img{width:48px;height:48px;object-fit:contain;image-rendering:pixelated}
+.quiz{margin-top:2rem;padding:1.2rem;border:2px solid var(--cocoa);border-left:8px solid var(--orange);background:#fff1b8;color:var(--ink)}
+.quiz h2{color:var(--cocoa)!important}.question{padding:1rem;background:#fffaf0!important}.question legend{font-family:"Pixelify Sans",monospace;color:var(--cocoa);font-size:.95rem}.question label{color:#514742}
+
+footer{background:var(--cocoa-dark)!important;border-top:5px solid var(--orange)!important;color:#fff5df!important}
+@media(max-width:900px){.hero>.baseline-card{min-height:0}.lesson-layout{grid-template-columns:1fr}.lesson-side{position:static}.hero-copy{min-height:360px}}
+@media(max-width:720px){.season-lesson-grid{grid-template-columns:1fr}.season-lesson-grid img{height:210px}.sprite-teaching-grid,.machine-grid{grid-template-columns:repeat(2,1fr)}.smelting-visual>div,.sprinkler-recipe{flex-wrap:wrap}.hero-copy{min-height:330px}.hero>.baseline-card{height:auto}}
+@media(max-width:440px){.sprite-teaching-grid,.machine-grid{grid-template-columns:1fr 1fr}.sprite-tile{min-height:110px;padding:.55rem}.sprinkler-layout{grid-template-columns:repeat(3,60px)}.sprinkler-layout span{width:60px;height:60px}.skill-heart-row strong{font-size:.82rem;letter-spacing:.03em}.hero-copy{min-height:310px}}
