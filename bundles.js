@@ -50,6 +50,17 @@ const bundleItem=item=>typeof item==='string'?{n:item}:item;
 const bundleItemKey=(room,bundle,index)=>`${room.name}|${bundle.name}|${index}`;
 const bundleDoneKey=(room,bundle)=>`${room.name}|${bundle.name}|done`;
 const bundleItemSlug=item=>item.img||slugify(item.n);
+const bundleSourceHints={
+  'Coconut':'Calico Desert forage, Oasis, or shake Palm Trees',
+  'Cactus Fruit':'Calico Desert forage or the Oasis',
+  'Cave Carrot':'Till soil or smash boxes in the Mines',
+  'Red Mushroom':'Mines, Secret Woods, or mushroom Farm Cave',
+  'Purple Mushroom':'Deeper Mines or mushroom Farm Cave',
+  'Maple Syrup':'Place a Tapper on a Maple Tree',
+  'Oak Resin':'Place a Tapper on an Oak Tree',
+  'Pine Tar':'Place a Tapper on a Pine Tree',
+  'Morel':'Secret Woods in Spring or mushroom Farm Cave'
+};
 
 window.bundlesPage=function(){
   let active='Crafts Room';
@@ -65,7 +76,7 @@ window.bundlesPage=function(){
     const completed=room.bundles.filter(bundle=>progress[bundleDoneKey(room,bundle)]||bundle.items.map((_,i)=>progress[bundleItemKey(room,bundle,i)]).filter(Boolean).length>=(bundle.need||bundle.items.length)).length;
     $('#bundleRoom').innerHTML=`<div class="bundle-room-head ${room.color}"><div><p class="eyebrow">Room progress · ${completed}/${room.bundles.length} bundles</p><h2>${room.name}</h2><p>${room.note}</p></div><aside><span>Room completion unlock</span><strong>${room.unlock}</strong></aside></div><div class="bundle-grid">${room.bundles.map(bundle=>{
       const checked=bundle.items.map((_,i)=>Boolean(progress[bundleItemKey(room,bundle,i)])),need=bundle.need||bundle.items.length,doneKey=bundleDoneKey(room,bundle),manualDone=Boolean(progress[doneKey]),done=manualDone||checked.filter(Boolean).length>=need;
-      return `<article class="bundle-card ${done?'is-complete':''}"><header><div><p class="eyebrow">${bundle.need?`Choose any ${bundle.need}`:'Bring every item'}</p><h3>${bundle.name}</h3></div><div class="bundle-status-stack"><span class="bundle-status">${done?'✓ Complete':`${checked.filter(Boolean).length}/${need}`}</span><label class="bundle-done-control"><input type="checkbox" data-bundle-done="${doneKey}" ${manualDone?'checked':''}><span>Done</span></label></div></header><div class="bundle-item-grid">${bundle.items.map((raw,i)=>{const item=bundleItem(raw),key=bundleItemKey(room,bundle,i);return `<label class="bundle-item ${progress[key]?'is-checked':''}"><input type="checkbox" data-bundle-item="${key}" ${progress[key]?'checked':''}><img src="assets/bundles/${bundleItemSlug(item)}.png" alt="${item.n}"><span><strong>${item.q?`${item.q} × `:''}${item.n}</strong>${item.note?`<small>${item.note}</small>`:''}</span></label>`}).join('')}</div><footer><span>Bundle reward</span><strong>${bundle.reward}</strong></footer></article>`}).join('')}</div>`;
+      return `<article class="bundle-card ${done?'is-complete':''}"><header><div><p class="eyebrow">${bundle.need?`Choose any ${bundle.need}`:'Bring every item'}</p><h3>${bundle.name}</h3></div><div class="bundle-status-stack"><span class="bundle-status">${done?'✓ Complete':`${checked.filter(Boolean).length}/${need}`}</span><label class="bundle-done-control"><input type="checkbox" data-bundle-done="${doneKey}" ${manualDone?'checked':''}><span>Done</span></label></div></header><div class="bundle-item-grid">${bundle.items.map((raw,i)=>{const item=bundleItem(raw),key=bundleItemKey(room,bundle,i),source=bundleSourceHints[item.n];return `<label class="bundle-item ${progress[key]?'is-checked':''}"><input type="checkbox" data-bundle-item="${key}" ${progress[key]?'checked':''}><img src="assets/bundles/${bundleItemSlug(item)}.png" alt="${item.n}"><span><strong>${item.q?`${item.q} × `:''}${item.n}</strong>${item.note?`<small>${item.note}</small>`:''}${source?`<small class="bundle-source">Find it: ${source}</small>`:''}</span></label>`}).join('')}</div><footer><span>Bundle reward</span><strong>${bundle.reward}</strong></footer></article>`}).join('')}</div>`;
     document.querySelectorAll('[data-bundle-item]').forEach(input=>input.onchange=()=>{const next=readBundleProgress();next[input.dataset.bundleItem]=input.checked;writeBundleProgress(next);draw()});
     document.querySelectorAll('[data-bundle-done]').forEach(input=>input.onchange=()=>{const next=readBundleProgress();next[input.dataset.bundleDone]=input.checked;writeBundleProgress(next);draw()});
   };
