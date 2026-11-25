@@ -1,0 +1,64 @@
+const standardUpgradeTiers=[
+  {tier:'Copper',cost:'2,000g',bars:'5 Copper Bars'},
+  {tier:'Steel',cost:'5,000g',bars:'5 Iron Bars'},
+  {tier:'Gold',cost:'10,000g',bars:'5 Gold Bars'},
+  {tier:'Iridium',cost:'25,000g',bars:'5 Iridium Bars'}
+];
+const toolUpgradeData=[
+  {name:'Pickaxe',img:'pickaxe.png',use:'Breaks rocks, ore nodes, placed machines, and tilled soil.',tiers:['Mines floors 1–39 become much faster; Copper Nodes take 2 hits.','Breaks farm boulders and the barrier near the Dwarf; floors 40–79 become much faster.','Breaks meteorites; floors 80–120 rocks break in 1 hit.','Quarry Mine and Skull Cavern rocks break in 1 hit; most gem nodes also break in 1 hit.'],advice:'At mine floor 46, Steel is the most practical next goal if your Pickaxe is still Basic. It makes the frozen floors much calmer.'},
+  {name:'Axe',img:'axe.png',use:'Chops trees, stumps, logs, and giant crops.',tiers:['Breaks Large Stumps and reduces a full tree to 8 hits.','Breaks Large Logs—including the Secret Woods entrance—and reduces a full tree to 6 hits.','Full trees take 4 hits.','Full trees take 2 hits; small stumps take 1 hit.'],advice:'Your last reported Copper Axe already handles Large Stumps. Steel is the meaningful exploration upgrade because it opens Large Logs.'},
+  {name:'Hoe',img:'hoe.png',use:'Tills soil and digs Artifact Spots.',tiers:['Charge to till 3 tiles in a line.','Charge to till 5 tiles in a line.','Charge to till a 3×3 area.','Charge to till a 6×3 area.'],advice:'Upgrade when field preparation feels tiring; sprinklers usually save more everyday time first.'},
+  {name:'Watering Can',img:'watering-can.png',use:'Waters crops; hold the tool button to charge upgraded patterns.',tiers:['55 charges; waters up to 3 tiles in a line.','70 charges; waters up to 5 tiles in a line.','85 charges; waters up to a 3×3 area.','100 charges; waters up to a 6×3 area.'],advice:'Give it to Clint after watering on the day before rain, or during Winter when outdoor crops are not relying on it.'}
+];
+
+window.toolGuidePage=function(){
+  const current=currentFarm();
+  main.innerHTML=header('Tools & upgrade workshop','Where every important tool comes from, who upgrades it, what each tier costs, how long it takes, and which improvement actually matters.')+`
+  <section class="tool-clint-card"><img src="assets/villagers/clint.png" alt="Clint"><div><p class="eyebrow">Where to upgrade</p><h2>Visit Clint at the Blacksmith</h2><p>The Blacksmith is in southeast Pelican Town, directly north of the Museum. Bring the tool, the gold, and five matching bars before the service counter closes at <strong>4:00pm</strong>.</p><p><strong>Timing:</strong> drop it off today, spend tomorrow without it, then collect it the following day. Tiers must be purchased in order.</p></div></section>
+  <div class="notice current-note"><strong>Your current notes:</strong> Pickaxe ${current.pickaxe||'Basic'} · Axe ${current.axe||'Copper'} · Watering Can ${current.watering||'Basic'} · mine floor ${current.mine}. Your likely high-value upgrade is the <strong>Steel Pickaxe</strong> for floors 40–79.</div>
+  <div class="tool-guide-grid">${toolUpgradeData.map(tool=>`<article class="tool-guide-card"><header><img src="assets/tools/${tool.img}" alt="${tool.name}"><div><p class="eyebrow">Main tool</p><h2>${tool.name}</h2><p>${tool.use}</p></div></header><div class="tool-tier-list">${standardUpgradeTiers.map((tier,i)=>`<div><strong>${tier.tier}</strong><span>${tier.cost} · ${tier.bars}</span><p>${tool.tiers[i]}</p></div>`).join('')}</div><aside><strong>Gentle advice:</strong> ${tool.advice}</aside></article>`).join('')}</div>
+  <section class="section"><div class="section-title"><div><p class="eyebrow">Other upgrade paths</p><h2>Tools that work differently</h2></div><p>These are bought or upgraded through different rules.</p></div><div class="other-tool-grid">
+    <article><img src="assets/tools/copper-pan.png" alt="Copper Pan"><h3>Pan</h3><p><strong>Get it:</strong> unlocked through a town restoration path; a replacement Copper Pan costs 2,500g.</p><p><strong>Upgrade at Clint:</strong> Steel 5,000g + 5 Iron Bars; Gold 10,000g + 5 Gold Bars; Iridium 25,000g + 5 Iridium Bars. Better pans find more ore and special items.</p></article>
+    <article><span class="tool-emoji">🗑️</span><h3>Inventory Trash Can</h3><p><strong>Upgrade at Clint:</strong> Copper 1,000g; Steel 2,500g; Gold 5,000g; Iridium 12,500g—each also needs 5 matching bars.</p><p>Returns 15%, 30%, 45%, then 60% of an item’s monetary value when you trash it.</p></article>
+    <article><img src="assets/tools/scythe.png" alt="Scythe"><h3>Scythes</h3><p>The basic Scythe is a starter tool. The Golden Scythe is found at the end of the Quarry Mine. The Iridium Scythe arrives through Farming Mastery later and can harvest crops.</p></article>
+  </div></section>
+  <section class="section"><div class="section-title"><div><p class="eyebrow">Bought from Willy</p><h2>Fishing rod progression</h2></div></div><div class="rod-grid">
+    ${[['Bamboo Pole','bamboo-pole.png','Given by Willy or 500g','Starter rod; no bait slot.'],['Fiberglass Rod','fiberglass-rod.png','1,800g · Fishing 2','Adds bait. This is available for your reported Fishing level 2.'],['Iridium Rod','iridium-rod.png','7,500g · Fishing 6','Adds bait and one tackle slot.'],['Advanced Iridium Rod','advanced-iridium-rod.png','25,000g · Fishing Mastery','Adds bait and two tackle slots.']].map(r=>`<article><img src="assets/tools/${r[1]}" alt="${r[0]}"><div><h3>${r[0]}</h3><strong>${r[2]}</strong><p>${r[3]}</p></div></article>`).join('')}
+  </div></section>
+  <section class="section"><div class="section-title"><h2>Useful animal tools</h2></div><div class="rod-grid"><article><img src="assets/tools/milk-pail.png" alt="Milk Pail"><div><h3>Milk Pail</h3><strong>Marnie · 1,000g</strong><p>Collects milk from cows and goats.</p></div></article><article><img src="assets/tools/shears.png" alt="Shears"><div><h3>Shears</h3><strong>Marnie · 1,000g</strong><p>Collects wool from sheep.</p></div></article></div></section>
+  <p class="tiny source-note">Upgrade costs, materials, timing, tool effects, and shop requirements follow Stardew Valley 1.6.</p>`;
+};
+
+const fishingWaters=[
+  {group:'Main valley',name:'Pelican Town River',route:'Fish from the river running through town.',fish:['Sunfish','Catfish','Shad','Smallmouth Bass','Bream','Rainbow Trout','Pike','Salmon','Walleye','Tiger Trout','Perch','Lingcod','Green Algae']},
+  {group:'Main valley',name:'Cindersap Forest River',route:'Use the river south of the farm, including the water near Leah’s Cottage.',fish:['Sunfish','Catfish','Shad','Bream','Rainbow Trout','Pike','Dorado','Salmon','Walleye','Tiger Trout','Perch','Lingcod','Chub','Green Algae']},
+  {group:'Main valley',name:'Cindersap Forest Pond',route:'The pond west of the river, near the Secret Woods side of the forest.',fish:['Smallmouth Bass','Pike','Walleye','Perch','Midnight Carp','Green Algae']},
+  {group:'Main valley',name:'Forest Waterfalls',route:'Cast into the waterfalls at the far south of Cindersap Forest.',fish:['Goby','Salmon']},
+  {group:'Main valley',name:'Mountain Lake',route:'The large lake outside the Mines and near Robin’s path.',fish:['Largemouth Bass','Rainbow Trout','Sturgeon','Walleye','Midnight Carp','Lingcod','Perch','Bullhead','Carp','Chub','Green Algae','Legend']},
+  {group:'Main valley',name:'The Beach · Ocean',route:'Any normal Beach water shares the same ordinary fish; the far east pier has one legendary exception.',fish:['Anchovy','Sardine','Herring','Eel','Flounder','Halibut','Pufferfish','Tuna','Red Snapper','Tilapia','Octopus','Super Cucumber','Sea Cucumber','Squid','Albacore','Red Mullet','Seaweed','Sea Jelly','Crimsonfish']},
+  {group:'Main valley',name:'Meadowlands Farm Ponds',route:'The left pond gives trash, the middle pond gives Crayfish, and the right pond gives Periwinkle.',fish:['Crayfish','Periwinkle']},
+  {group:'Unlockable',name:'Secret Woods Pond',route:'Use a Steel Axe to break the Large Log in northwest Cindersap Forest.',fish:['Carp','Woodskip','Catfish','Green Algae']},
+  {group:'Unlockable',name:'The Mines · floor 20 lake',route:'Take the elevator to floor 20 and cast into the underground lake.',fish:['Ghostfish','Stonefish','Cave Jelly','Green Algae','White Algae']},
+  {group:'Unlockable',name:'The Mines · floor 60 lake',route:'Take the elevator to floor 60.',fish:['Ghostfish','Ice Pip','Cave Jelly','Green Algae','White Algae']},
+  {group:'Unlockable',name:'The Mines · floor 100 lava lake',route:'Take the elevator to floor 100.',fish:['Lava Eel','Cave Jelly','Green Algae','White Algae']},
+  {group:'Unlockable',name:'Calico Desert Pond',route:'Repair the bus, buy a ticket, then fish in the pond near the Skull Cavern entrance.',fish:['Sandfish','Scorpion Carp','Green Algae']},
+  {group:'Unlockable',name:'The Sewers',route:'Donate 60 Museum items to receive access.',fish:['Carp','Green Algae','White Algae','Mutant Carp']},
+  {group:'Special',name:'Night Market Submarine',route:'Ride the submarine at the Beach on Winter 15–17, from 5:00pm.',fish:['Midnight Squid','Spook Fish','Blobfish','Seaweed']},
+  {group:'Later locations',name:'Mutant Bug Lair',route:'Opens during a later Wizard quest.',fish:['Carp','Slimejack','Green Algae','White Algae']},
+  {group:'Later locations',name:'Witch’s Swamp',route:'Opens during a later Wizard quest.',fish:['Void Salmon','Catfish','Green Algae','White Algae']},
+  {group:'Later locations',name:'Ginger Island Ocean',route:'Fish from the island’s saltwater shores.',fish:['Tuna','Pufferfish','Flounder','Lionfish','Octopus','Super Cucumber','Stingray','Seaweed','Sea Jelly']},
+  {group:'Later locations',name:'Ginger Island Rivers & Ponds',route:'Fresh water in Island North and Island West.',fish:['Blue Discus','Tilapia','Midnight Carp','River Jelly','Green Algae']},
+  {group:'Later locations',name:'Pirate Cove',route:'A hidden cove in the island’s southeast area.',fish:['Stingray','Lionfish','Tuna','Pufferfish','Super Cucumber']},
+  {group:'Later locations',name:'Volcano Caldera',route:'The water at the top of the Volcano.',fish:['Lava Eel']}
+];
+const fishInfo=name=>fishGuideData.find(f=>f.n===name);
+const fishChip=name=>{const info=fishInfo(name);return info?`<a class="water-fish-chip" href="#fish" title="${name}: ${info.price}g"><img src="assets/fish/${slugify(name)}.png" alt=""><span>${name}</span><b>${info.price}g</b></a>`:`<span class="water-fish-chip nonfish"><span>${name}</span></span>`};
+const priorMapPage=window.enhancedMapPage;
+window.enhancedMapPage=function(){
+  priorMapPage();
+  const cards=fishingWaters.map(w=>{const priced=w.fish.map(fishInfo).filter(Boolean),best=priced.sort((a,b)=>b.price-a.price)[0];return `<article class="water-card"><header><div><p class="eyebrow">${w.group}</p><h3>${w.name}</h3></div>${best?`<span class="best-catch">Top base value<br><strong>${best.n} · ${best.price}g</strong></span>`:''}</header><p>${w.route}</p><div class="water-fish-list">${w.fish.map(fishChip).join('')}</div></article>`}).join('');
+  main.insertAdjacentHTML('beforeend',`<section class="section fishing-water-section"><div class="section-title"><div><p class="eyebrow">Fishing by place</p><h2>Every major body of water</h2></div><p>Use this to choose a destination. Tap any fish to open the full guide for its season, time, and weather.</p></div><div class="fishing-tip-row"><article><strong>Best ordinary mainland value</strong><span>Lava Eel · 700g</span><p>Mines floor 100. Difficult, rare, and excellent in a Fish Pond.</p></article><article><strong>Best seasonal ordinary value</strong><span>Blobfish · 500g</span><p>Night Market submarine, Winter 15–17.</p></article><article><strong>Legendary warning</strong><span>Legend · 5,000g</span><p>Huge value, but only one can be caught per save. Keeping it as a trophy is often more special than selling it.</p></article></div><div class="water-filter"><label for="waterGroup">Show locations</label><select id="waterGroup"><option>All</option><option>Main valley</option><option>Unlockable</option><option>Special</option><option>Later locations</option></select></div><div id="waterGrid" class="water-grid">${cards}</div><p class="tiny source-note">Fish pools vary by map, season, time, and weather. Farm ponds and decorative water may produce mostly trash; the cards focus on useful named fishing waters.</p></section>`);
+  $('#waterGroup').onchange=e=>{const group=e.target.value;document.querySelectorAll('.water-card').forEach((card,i)=>card.hidden=group!=='All'&&fishingWaters[i].group!==group)};
+};
+
+route();
