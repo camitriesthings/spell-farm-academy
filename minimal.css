@@ -675,3 +675,10 @@ main{padding-top:1.5rem;padding-bottom:3rem}
   .topbar nav a{font-size:.88rem;padding:.5rem}
   .topbar nav a:nth-last-child(1){margin-left:0}
 }
+
+/* Clustered navigation: hover on desktop, tap everywhere. */
+.nav-cluster{position:relative}.nav-cluster-toggle{display:inline-flex;align-items:center;gap:.3rem;min-height:34px;padding:.4rem .48rem;border:0;border-radius:4px;background:transparent;color:#4b3733;font-family:inherit;font-size:.81rem;font-weight:650;cursor:pointer;white-space:nowrap}.nav-cluster-toggle:hover,.nav-cluster-toggle:focus-visible,.nav-cluster.open>.nav-cluster-toggle{background:#f8dfe4;color:var(--cocoa)}.nav-chevron{margin-left:.12rem;font-size:.9rem;line-height:1;transition:transform .15s}.nav-cluster.open .nav-chevron{transform:rotate(180deg)}
+.nav-dropdown{position:absolute;z-index:20;top:calc(100% + .35rem);left:0;display:none;min-width:190px;padding:.45rem;border:2px solid var(--cocoa);border-radius:5px;background:#fff8e7;box-shadow:5px 5px 0 rgba(107,52,42,.18)}.nav-cluster:hover>.nav-dropdown,.nav-cluster:focus-within>.nav-dropdown,.nav-cluster.open>.nav-dropdown{display:grid}.nav-dropdown a{width:100%}.nav-library-dropdown{grid-template-columns:1fr 1fr;min-width:330px}
+.topbar nav>.nav-update{margin-left:.2rem;background:#fff0be;border:1px solid #dbc268}.topbar nav>.nav-update:hover{background:#f4c816}
+@media(max-width:1480px){.nav-cluster{width:100%}.nav-cluster-toggle{width:100%;justify-content:flex-start;font-size:.88rem;padding:.5rem}.nav-chevron{margin-left:auto}.nav-dropdown{position:static;min-width:0;margin:.15rem 0 .35rem 1.5rem;padding:.3rem;border:0;border-left:3px solid var(--pink);border-radius:0;background:#fffdf7;box-shadow:none}.nav-library-dropdown{grid-template-columns:1fr 1fr}.topbar nav>.nav-update{margin-left:0}}
+@media(max-width:520px){.nav-library-dropdown{grid-template-columns:1fr}}
