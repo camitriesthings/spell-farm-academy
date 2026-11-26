@@ -84,6 +84,17 @@ window.enhancedDashboard=function(){
   <section class="section farm-editor" id="update-farm"><div class="section-title"><div><p class="eyebrow">Your live notes</p><h2>Update My Farm</h2></div><p>Change these whenever your farm changes. Saving instantly rebuilds today’s birthdays, events, chores, and route.</p></div><form id="farmForm"><div class="editor-group"><h3>Today</h3><div class="editable-grid">${inputField('Season','season','select',['Spring','Summer','Fall','Winter'])}${inputField('Day','day')}${inputField('Year','year')}${inputField('Weather','weather','select',['Sunny','Rainy','Snowy','Stormy'])}${inputField('Daily luck','luck','select',['Very good','Good','Neutral','Bad'])}${inputField('Gold','gold')}</div></div><div class="editor-group"><h3>Animals & supplies</h3><div class="editable-grid compact-fields">${inputField('Hay','hay')}${inputField('Chickens','chickens')}${inputField('Cows','cows')}${inputField('Ducks','ducks')}${inputField('Goats','goats')}${inputField('Sheep','sheep')}${inputField('Rabbits','rabbits')}${inputField('Pigs','pigs')}${inputField('Mayo machines','mayoMachines')}${inputField('Cheese presses','cheesePresses')}</div></div><details class="more-farm-fields"><summary>Skills, tools & machines</summary><div class="editor-group"><div class="editable-grid compact-fields">${inputField('Farming','farming')}${inputField('Mining','mining')}${inputField('Foraging','foraging')}${inputField('Fishing','fishing')}${inputField('Combat','combat')}${inputField('Mine floor','mine')}${inputField('Pickaxe','pickaxe','select',['Basic','Copper','Steel','Gold','Iridium'])}${inputField('Axe','axe','select',['Basic','Copper','Steel','Gold','Iridium'])}${inputField('Watering can','watering','select',['Basic','Copper','Steel','Gold','Iridium'])}${inputField('Quality sprinklers','sprinklers')}</div></div></details><div class="field project-field"><label for="farm-project">Current goal or next project</label><input id="farm-project" data-farm="project" type="text" value="${s.project||''}"></div><div class="farm-photo-editor" id="farmPhotoForm"><div class="farm-photo-copy"><h3>Current farm picture</h3><p>Add or replace your latest farm screenshot. It stays synced with your account and appears below the header.</p><div class="farm-photo-actions"><label class="photo-picker" for="farmPhotoInput">Choose a picture</label><input id="farmPhotoInput" name="photo" type="file" accept="image/jpeg,image/png,image/webp,image/gif"><button class="button" id="uploadFarmPhoto" type="button">Upload picture</button><button class="button secondary" id="removeFarmPhoto" type="button">Remove</button></div><p class="tiny" id="photoStatus">JPG, PNG, WebP, or GIF · up to 8 MB</p></div></div><div class="button-row"><button class="button" type="submit">Save & rebuild today</button><button class="button secondary" id="resetCurrent" type="button">Reset current fields</button></div></form></section>
   <section class="section" id="daily-plan"><div class="section-title"><div><p class="eyebrow">Based on your current notes</p><h2>Your gentle plan for ${s.season} ${s.day}</h2></div><p>A suggested menu—never a checklist you have to finish.</p></div><div class="plan-grid">${plan.map(x=>`<article class="card plan-card"><span class="badge">${x.tag}</span><h3>${x.title}</h3><p>${x.text}</p></article>`).join('')}</div></section>
   <section class="section"><div class="section-title"><h2>Course progress</h2><p>${p.length} of 12 lessons complete · synced to your account.</p></div><div class="progress-track"><i style="width:${p.length/12*100}%"></i></div><div class="button-row"><a class="button secondary" href="#lessons">View all lessons</a><button class="button secondary" id="resetProgress" type="button">Reset lesson progress</button></div></section>`;
+  document.querySelector('.baseline-summary>.tiny').textContent='CURRENT FARM';
+  document.querySelector('.baseline-gold strong').textContent=`${Number(s.gold||0).toLocaleString()}g`;
+  const currentDate=document.querySelectorAll('.baseline-season b');
+  if(currentDate[0])currentDate[0].textContent=`${s.season} · Day ${s.day}`;
+  if(currentDate[1])currentDate[1].textContent=`Year ${s.year}`;
+  const currentSkills=[s.farming,s.mining,s.foraging,s.fishing,s.combat];
+  document.querySelectorAll('.skill-heart-row strong').forEach((row,index)=>{
+    const level=Math.max(0,Math.min(10,Math.round(Number(currentSkills[index])||0)));
+    row.textContent='♥'.repeat(level);
+    row.setAttribute('aria-label',`Level ${level}`);
+  });
   document.querySelector('#update-farm')?.remove();bindFarmPhoto();updateCloudLabel();
   document.querySelector('#resetProgress').onclick=()=>{if(confirm('Reset lesson completion and quiz progress on this browser?')){setProgress([]);enhancedDashboard();toast('Lesson progress reset')}};
 };
@@ -94,7 +105,7 @@ window.updateFarmPage=function(){
   document.querySelectorAll('.more-farm-fields').forEach(section=>section.open=true);
   bindFarmPhoto();
   document.querySelector('#farmForm').onsubmit=e=>{e.preventDefault();const data={};document.querySelectorAll('[data-farm]').forEach(el=>data[el.dataset.farm]=el.type==='number'?Number(el.value):el.value);localStorage.setItem('spellStats',JSON.stringify(data));queueCloudSave();toast('Farm updated · syncing to your account');setTimeout(()=>{location.hash='#dashboard'},250)};
-  document.querySelector('#resetCurrent').onclick=()=>{if(confirm('Reset only the editable current farm fields? The frozen baseline will stay.')){localStorage.removeItem('spellStats');queueCloudSave();window.updateFarmPage();toast('Current fields reset')}};
+  document.querySelector('#resetCurrent').onclick=()=>{if(confirm('Reset the editable farm fields to the original Winter Day 1 defaults?')){localStorage.removeItem('spellStats');queueCloudSave();window.updateFarmPage();toast('Current fields reset')}};
 };
 
 const lessonGuides={
@@ -193,7 +204,25 @@ window.enhancedLessonPage=function(id){
   document.querySelector('#copyPrompt').onclick=()=>copyPrompt(l);
 };
 
-function bindFarmPhoto(){const input=document.querySelector('#farmPhotoInput'),upload=document.querySelector('#uploadFarmPhoto'),img=document.querySelector('#farmPhoto'),frame=document.querySelector('#farmPhotoFrame'),status=document.querySelector('#photoStatus'),remove=document.querySelector('#removeFarmPhoto');const load=async()=>{if(!img||!frame)return;try{const r=await fetch('/api/photo',{cache:'no-store'});if(!r.ok)throw new Error();const blob=await r.blob();img.src=URL.createObjectURL(blob);frame.hidden=false;if(remove)remove.hidden=false}catch(e){frame.hidden=true;if(remove)remove.hidden=true}};if(upload&&input&&status)upload.onclick=async()=>{if(!input.files[0]){status.textContent='Choose a picture first.';return}status.textContent='Uploading…';const data=new FormData();data.append('photo',input.files[0]);try{const r=await fetch('/api/photo',{method:'POST',body:data}),out=await r.json();if(!r.ok)throw new Error(out.error||'Upload failed');status.textContent='✓ Farm picture saved to your account';await load()}catch(err){status.textContent=err.message||'Could not upload this picture.'}};if(remove)remove.onclick=async()=>{if(!confirm('Remove your saved farm picture?'))return;await fetch('/api/photo',{method:'DELETE'});if(status)status.textContent='Farm picture removed.';await load()};load()}
+function bindFarmPhoto(){
+  const input=document.querySelector('#farmPhotoInput'),upload=document.querySelector('#uploadFarmPhoto'),img=document.querySelector('#farmPhoto'),frame=document.querySelector('#farmPhotoFrame'),status=document.querySelector('#photoStatus'),remove=document.querySelector('#removeFarmPhoto');
+  let photoUrl='';
+  const load=async()=>{
+    if(!img||!frame)return;
+    const blob=await window.SpellCloud?.loadPhoto();
+    if(photoUrl)URL.revokeObjectURL(photoUrl);
+    if(blob){photoUrl=URL.createObjectURL(blob);img.src=photoUrl;frame.hidden=false;if(remove)remove.hidden=false}
+    else{frame.hidden=true;if(remove)remove.hidden=true}
+  };
+  if(upload&&input&&status)upload.onclick=async()=>{
+    if(!input.files[0]){status.textContent='Choose a picture first.';return}
+    status.textContent='Uploading…';
+    try{await window.SpellCloud?.uploadPhoto(input.files[0]);status.textContent='✓ Farm picture synced to your account';await load()}
+    catch(err){status.textContent=err.message||'Could not upload this picture.'}
+  };
+  if(remove)remove.onclick=async()=>{if(!confirm('Remove your saved farm picture?'))return;try{await window.SpellCloud?.removePhoto();if(status)status.textContent='Farm picture removed.';await load()}catch(err){if(status)status.textContent=err.message||'Could not remove this picture.'}};
+  load();
+}
 
 const residents={
   town:['Abigail','Alex','Caroline','Clint','Emily','Evelyn','George','Gus','Haley','Harvey','Jodi','Kent','Lewis','Pam','Penny','Pierre','Sam','Vincent'],

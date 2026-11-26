@@ -682,6 +682,16 @@ main{padding-top:1.5rem;padding-bottom:3rem}
 .nav-dropdown{position:absolute;z-index:20;top:calc(100% + .35rem);left:0;display:none;min-width:190px;padding:.45rem;border:2px solid var(--cocoa);border-radius:5px;background:#fff8e7;box-shadow:5px 5px 0 rgba(107,52,42,.18)}.nav-cluster:hover>.nav-dropdown,.nav-cluster:focus-within>.nav-dropdown,.nav-cluster.open>.nav-dropdown{display:grid}.nav-dropdown a{width:100%}.nav-library-dropdown{grid-template-columns:1fr 1fr;min-width:330px}
 .topbar nav>.nav-update{margin-left:.2rem;background:#fff0be;border:1px solid #dbc268}.topbar nav>.nav-update:hover{background:#f4c816}
 @media(max-width:1480px){.nav-cluster{width:100%}.nav-cluster-toggle{width:100%;justify-content:flex-start;font-size:.88rem;padding:.5rem}.nav-chevron{margin-left:auto}.nav-dropdown{position:static;min-width:0;margin:.15rem 0 .35rem 1.5rem;padding:.3rem;border:0;border-left:3px solid var(--pink);border-radius:0;background:#fffdf7;box-shadow:none}.nav-library-dropdown{grid-template-columns:1fr 1fr}.topbar nav>.nav-update{margin-left:0}}
+
+/* Private account sync */
+.account-button{flex:0 0 auto;min-height:38px;padding:.45rem .7rem;border:2px solid var(--cocoa);border-radius:5px;background:var(--sky);color:var(--cocoa);font-family:"Pixelify Sans",monospace;font-size:.78rem;font-weight:700;cursor:pointer}
+.account-button:hover,.account-button:focus-visible{background:#b8dcf5;outline:2px solid var(--butter);outline-offset:2px}
+.account-dialog{width:min(560px,calc(100% - 1.5rem));padding:0;border:3px solid var(--cocoa);border-radius:8px;background:#fff8e8;color:var(--cocoa);box-shadow:10px 10px 0 rgba(107,52,42,.24)}
+.account-dialog::backdrop{background:rgba(50,25,22,.58);backdrop-filter:blur(2px)}
+.account-dialog>form{position:absolute;top:.55rem;right:.55rem;z-index:2}.account-close{width:38px;height:38px;border:2px solid var(--cocoa);border-radius:50%;background:#fffdf7;color:var(--cocoa);font-size:1.5rem;line-height:1;cursor:pointer}
+.account-dialog-inner{padding:clamp(1.25rem,5vw,2.2rem)}.account-chicken{display:block;width:76px;height:76px;margin:0 0 .7rem;object-fit:contain;image-rendering:pixelated}.account-dialog h2{margin:.2rem 0 .75rem;font-family:"Pixelify Sans",monospace;font-size:clamp(1.45rem,5vw,2rem);line-height:1.05}.account-dialog p{line-height:1.55}.account-dialog label{display:block;margin:.85rem 0 .35rem;font-size:.8rem;font-weight:800}.account-email-row{display:grid;grid-template-columns:1fr auto;gap:.5rem}.account-email-row input{min-width:0;padding:.75rem;border:2px solid #bfa896;border-radius:5px;background:#fffefa;font:inherit}.account-email-row .button{white-space:nowrap}.account-sync-status{padding:.65rem .8rem;border:1px solid #bbd8ee;border-radius:5px;background:#eaf5fc;font-weight:700}.account-message{min-height:1.5em;margin-bottom:0;color:#9a3d5c;font-weight:700}
+@media(max-width:1480px){.account-button{margin-left:auto}.topbar{flex-wrap:wrap}.topbar nav{order:4}}
+@media(max-width:560px){.account-email-row{grid-template-columns:1fr}.account-email-row .button{width:100%}.account-button{font-size:.72rem;padding:.4rem .55rem}}
 @media(max-width:520px){.nav-library-dropdown{grid-template-columns:1fr}}
 
 /* Complete collection library */

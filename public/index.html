@@ -28,12 +28,37 @@
       <a href="#tools"><img class="nav-icon" src="assets/buildings/shipping-bin.gif" alt="">Calculators</a>
       <a class="nav-update" href="#update-farm"><img class="nav-icon" src="assets/brand/chicken-icon.png" alt="">Update my farm</a>
     </nav>
+    <button class="account-button" id="accountButton" type="button" aria-haspopup="dialog">Sign in</button>
   </header>
   <main id="main" tabindex="-1"></main>
   <footer><span>Made for Meadowlands Spell Farm</span><span>Cloud-synced · unofficial fan guide · spoiler-light</span></footer>
   <div class="toast" id="toast" role="status" aria-live="polite"></div>
-  <script src="app.js?v=20261125-bundles"></script>
-  <script src="guide.js"></script>
+  <dialog class="account-dialog" id="accountDialog" aria-labelledby="accountTitle">
+    <form method="dialog"><button class="account-close" aria-label="Close">×</button></form>
+    <div class="account-dialog-inner">
+      <img class="account-chicken" src="assets/brand/chicken-icon-large.png" alt="">
+      <p class="eyebrow">Your farm account</p>
+      <h2 id="accountTitle">Keep Spell Farm with you</h2>
+      <div id="accountSignedOut">
+        <p>Sign in with your email to keep lesson progress, farm notes, checklists, and your farm picture the same on your laptop, iPad, and phone.</p>
+        <form id="magicLinkForm">
+          <label for="accountEmail">Email address</label>
+          <div class="account-email-row"><input id="accountEmail" name="email" type="email" autocomplete="email" required placeholder="you@example.com"><button class="button" type="submit">Email my sign-in link</button></div>
+        </form>
+        <p class="tiny">No password needed. The first time you sign in, progress already saved in this browser will move into your account.</p>
+      </div>
+      <div id="accountSignedIn" hidden>
+        <p>Signed in as <strong id="accountEmailLabel"></strong></p>
+        <p class="account-sync-status" id="accountSyncStatus">Checking your farm…</p>
+        <div class="button-row"><button class="button" id="syncNowButton" type="button">Sync now</button><button class="button secondary" id="signOutButton" type="button">Sign out</button></div>
+      </div>
+      <p class="account-message" id="accountMessage" role="status" aria-live="polite"></p>
+    </div>
+  </dialog>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="supabase-sync.js?v=20261126-sync"></script>
+  <script src="app.js?v=20261126-sync"></script>
+  <script src="guide.js?v=20261126-sync"></script>
   <script src="guides-extra.js?v=20261125-quest-done"></script>
   <script src="minerals.js?v=20261125-minerals"></script>
   <script src="comprehensive.js?v=20261125-collections"></script>
